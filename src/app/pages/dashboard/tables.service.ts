@@ -3,7 +3,7 @@ import { HttpModule, Http } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 
 @Injectable()
-export class BasicTablesService {
+export class TablesService {
 constructor(private http: Http) {
 this.http = http;
 }

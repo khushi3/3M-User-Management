@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
+import { TablesService  } from './tables.service';
 
 @Component({
   selector: 'dashboard',
@@ -7,7 +8,13 @@ import {Component} from '@angular/core';
 })
 export class Dashboard {
 
-  constructor() {
-  }
+  public items = [];
+public getData: any;
+constructor(private tableService: TablesService) {
+this.tableService.getJSON().subscribe(data => {
+this.items = data;
+console.log(data);
+}, error => console.log('Could not load List of Service'));
+}
 
 }

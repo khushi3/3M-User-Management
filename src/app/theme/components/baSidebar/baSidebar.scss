@@ -11,7 +11,7 @@ $angle-right: "\f101";
   z-index: 1001;
   display: block;
   min-height: 100%;
-  background-color: $sidebar;
+  background-color: black;
   height: 100%;
   position: fixed;
 }
@@ -120,10 +120,12 @@ a.al-sidebar-list-link {
 @mixin layout-collapsed() {
   .al-main {
     margin-left: 50px;
+     background-color: black;
   }
 
   .al-footer {
-    padding-left: 83px
+    padding-left: 83px;
+    display: none;
   }
 }
 
@@ -296,8 +298,13 @@ a.al-sidebar-list-link {
   }
   .al-main {
     margin-left: 0;
+    background-color: black;
   }
   .al-footer {
     padding-left: 0;
   }
+}
+
+.container {
+color: white !important;
 }
