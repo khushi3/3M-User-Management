@@ -9,9 +9,10 @@
     </thead>
     <tbody>
       <tr *ngFor="let list of items ">
-        <td> {{list.firstName}}</td>
-        <td> {{list.lastName}}</td>
-        <td> {{list.username}}</td>
+        <td> {{list.userGroup}}</td>
+<!--         <td> {{list.user.name}}</td>
+ -->        <td> {{list.roles[0]}}</td>
+            <td> {{list.permission[0]}}</td>
       </tr>
     </tbody>
   </table>
