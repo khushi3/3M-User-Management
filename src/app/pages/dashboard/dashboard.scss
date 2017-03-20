@@ -22,17 +22,19 @@ padding: 0 0 15px;
 height: 475px;
 }
 thead {
-color: black;
 text-transform: uppercase;
 }
 .table > tbody > tr > td {
-    background-color: black;
-    border: 1px solid;
+    //background-color: black;
+    //border: 1px solid;
     }
     
     .container {
-color: white !important;
+//color: white !important;
 }
 .al-main {
  background-color: black !important;
  }
+button.btn.btn-default {
+   // float: right;
+}

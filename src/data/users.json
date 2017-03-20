@@ -5,12 +5,117 @@
       "description": ""
    },
    "roles": [
-      "manager",
+      "Super Admin",
       "scrum master"
    ],
    "permission": [
-      "read",
+      "view",
       "read only"
+   ]
+},
+{
+   "userGroup": "SME",
+   "user": {
+      "name": "Ronaldo",
+      "description": ""
+   },
+   "roles": [
+      "developer",
+      "tester"
+   ],
+   "permission": [
+      "read",
+      "write"
+   ]
+},
+{
+   "userGroup": "SME",
+   "user": {
+      "name": "Ronaldo",
+      "description": ""
+   },
+   "roles": [
+      "Tester",
+      "developer"
+   ],
+   "permission": [
+      "create",
+      "write"
+   ]
+},
+{
+   "userGroup": "SME",
+   "user": {
+      "name": "Ronaldo",
+      "description": ""
+   },
+   "roles": [
+      "developer",
+      "tester"
+   ],
+   "permission": [
+      "update",
+      "write"
+   ]
+},
+{
+   "userGroup": "SME",
+   "user": {
+      "name": "Ronaldo",
+      "description": ""
+   },
+   "roles": [
+      "Designer",
+      "tester"
+   ],
+   "permission": [
+      "read",
+      "write"
+   ]
+},
+{
+   "userGroup": "SME",
+   "user": {
+      "name": "Ronaldo",
+      "description": ""
+   },
+   "roles": [
+      "Designer",
+      "tester"
+   ],
+   "permission": [
+      "read",
+      "write"
+   ]
+},
+{
+   "userGroup": "SME",
+   "user": {
+      "name": "Ronaldo",
+      "description": ""
+   },
+   "roles": [
+      "tester",
+      "tester"
+   ],
+   "permission": [
+      "read",
+      "write"
+   ]
+},
+{
+   "userGroup": "SME",
+   "user": {
+      "name": "Ronaldo",
+      "description": ""
+   },
+   "roles": [
+      "tester",
+      "tester"
+   ],
+   "permission": [
+      "read",
+      "write"
    ]
 },
 {
