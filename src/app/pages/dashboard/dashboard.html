@@ -12,13 +12,13 @@
     </thead>
     <tbody>
     <tr *ngFor="let list of items ">
-      <td> <button type="button" class="btn btn-default btn-sm" (click)="list.show = !list.show" style="float: right;"><span 
+      <td> <button type="button" class="btn btn-default btn-sm" (click)="list.show = !list.show" style="float: right;margin: 5px auto;"><span 
         class="fa " [ngClass]="{'fa-plus': !list.show , 'fa-minus': list.show }"></span></button></td>
        <td>
-        <input type="checkbox"   [(ngModel)]="list.isSelected" >{{list.userGroup}}
+        <input type="checkbox"   [(ngModel)]="list.isSelected" style="margin: 12px;">{{list.userGroup}}
         <ng-container *ngIf="list.show">
-          <div *ngFor="let row of list.users">
-            <span>{{row}}</span>
+          <div *ngFor="let row of list.users" style="margin-left: 28px;">
+            <span>{{row}}</span><br/>
           </div>
         </ng-container>
         <!-- <div *ngFor="let row of list.users">
@@ -47,10 +47,11 @@
         </div>
       </td> 
       <td>
-        <div class="btn-group" style="text-align: center;">
+        <div  class="btn-group" style="text-align: center;">
         <button type="button" class="btn btn-default btn"><i class="fa fa-pencil"></i></button>  
-          <button (click)='onDeleteConfirm($event)' type="button" class="btn btn-default" aria-label="Left Align"><i class="fa fa-trash"></i></button> 
+          <button (click)="removeRecordPlugin(list)" type="button" class="btn btn-default" aria-label="Left Align"><i class="fa fa-trash"></i></button> 
         </div>
+       
       </td>
     </tr>
   </tbody>

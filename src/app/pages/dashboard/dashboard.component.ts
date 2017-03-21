@@ -8,6 +8,7 @@ import { TablesService  } from './tables.service';
 })
 export class Dashboard {
   public items = [];
+   recentlyRemoveUsers: any[];
   constructor(private tableService: TablesService) {
     this.tableService.getJSON().subscribe(data => {
       this.items = data;
@@ -15,11 +16,7 @@ export class Dashboard {
     }, error => console.log('Could not load List of Service'));
     
   }
-  onDeleteConfirm(event): void {
-    if (window.confirm('Are you sure you want to delete?')) {
-      event.confirm.resolve(this.items);
-    } else {
-      event.confirm.reject();
+  removeRecordPlugin(item) {
+        // this.recentlyRemoveUsers = this.table.items.remove(item);
     }
-  }
 }
