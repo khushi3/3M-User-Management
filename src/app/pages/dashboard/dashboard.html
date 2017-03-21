@@ -18,11 +18,12 @@
         </div> -->
        </td>
 <!--         <td *ngFor="let subList of list.roles "> {{subList.roles}}</td>
- -->         <template let-group ngFor [ngForOf]="items">
-        <tr *ngFor="let row of group.roles">
-          <td>{{row}}<td>
-        </tr>
-      </template>
+ -->         
+        <td >
+          <div *ngFor="let row of list.roles">
+            <span>{{row}}</span>
+          </div>
+        </td>
       <td> {{list.permission[0]}}</td>
       </tr>
     </tbody>
