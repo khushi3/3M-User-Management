@@ -7,14 +7,19 @@ import { TablesService  } from './tables.service';
   templateUrl: './dashboard.html'
 })
 export class Dashboard {
-
   public items = [];
-public getData: any;
-constructor(private tableService: TablesService) {
-this.tableService.getJSON().subscribe(data => {
-this.items = data;
-console.log(data);
-}, error => console.log('Could not load List of Service'));
-}
-
+  constructor(private tableService: TablesService) {
+    this.tableService.getJSON().subscribe(data => {
+      this.items = data;
+      console.log(data);
+    }, error => console.log('Could not load List of Service'));
+    
+  }
+  onDeleteConfirm(event): void {
+    if (window.confirm('Are you sure you want to delete?')) {
+      event.confirm.resolve(this.items);
+    } else {
+      event.confirm.reject();
+    }
+  }
 }

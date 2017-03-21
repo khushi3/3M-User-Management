@@ -1,134 +1,143 @@
 [{
    "userGroup": "admin",
-   "user": {
-      "name": "syndnley",
-      "description": ""
-   },
+   "users": [
+       "syndy",
+       "khushi",
+       "Machr"
+   ],
    "roles": [
       "Super Admin",
       "scrum master"
    ],
-   "permission": [
-      "view",
-      "read only"
+   "location": [
+      "USA",
+      "bangalore"
    ]
 },
 {
    "userGroup": "SME",
-   "user": {
-      "name": "Ronaldo",
-      "description": ""
-   },
+   "users": [
+       "jack",
+       "Ronl",
+       "kyle"
+   ],
    "roles": [
       "developer",
       "tester"
    ],
-   "permission": [
-      "read",
-      "write"
+   "location": [
+      "USA",
+      "bangalore"
    ]
 },
 {
    "userGroup": "SME",
-   "user": {
-      "name": "Ronaldo",
-      "description": ""
-   },
+    "users": [
+       "milan",
+       "waina",
+       "kylee"
+   ],
    "roles": [
       "Tester",
       "developer"
    ],
-   "permission": [
-      "create",
-      "write"
+   "location": [
+      "bangalore",
+      "delhi"
    ]
 },
 {
    "userGroup": "SME",
-   "user": {
-      "name": "Ronaldo",
-      "description": ""
-   },
+    "users": [
+       "atul",
+       "amit",
+       "june"
+   ],
    "roles": [
       "developer",
       "tester"
    ],
-   "permission": [
-      "update",
-      "write"
+   "location": [
+      "delhi",
+      "bangalore"
    ]
 },
 {
    "userGroup": "SME",
-   "user": {
-      "name": "Ronaldo",
-      "description": ""
-   },
+    "users": [
+       "viksh",
+       "priyt",
+       "pinto"
+   ],
    "roles": [
       "Designer",
       "tester"
    ],
-   "permission": [
-      "read",
-      "write"
+   "location": [
+      "mumbai",
+      "nashville"
    ]
 },
 {
    "userGroup": "SME",
-   "user": {
-      "name": "Ronaldo",
-      "description": ""
-   },
+    "users": [
+       "foo",
+       "ros",
+       "wes"
+   ],
    "roles": [
       "Designer",
       "tester"
    ],
-   "permission": [
-      "read",
-      "write"
+   "location": [
+      "bangalore",
+      "USA"
    ]
 },
 {
    "userGroup": "SME",
-   "user": {
-      "name": "Ronaldo",
-      "description": ""
-   },
+    "users": [
+       "dorl",
+       "sury",
+       "surv"
+   ],
    "roles": [
       "tester",
       "tester"
    ],
-   "permission": [
-      "read",
-      "write"
+   "location": [
+      "pune",
+      "bangalore"
    ]
 },
 {
    "userGroup": "SME",
-   "user": {
-      "name": "Ronaldo",
-      "description": ""
-   },
+    "users": [
+       "mick",
+       "dona",
+       "angl"
+   ],
    "roles": [
       "tester",
       "tester"
    ],
-   "permission": [
+   "location": [
       "read",
       "write"
    ]
 },
 {
    "userGroup": "SME",
-   "user": {
-      "name": "Ronaldo",
-      "description": ""
-   },
+    "users": [
+       "dipu",
+       "sarb",
+       "barc"
+   ],
    "roles": [
       "developer",
       "tester"
    ],
-   "permission": [
+   "location": [
       "read",
       "write"
    ]

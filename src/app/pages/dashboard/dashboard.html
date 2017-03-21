@@ -1,37 +1,59 @@
 <div class="container">
-<table class="table table-hover table-inverse">
+  <table class="table table-hover table-inverse">
     <thead>
       <tr class="accordion-toggle"  data-toggle="collapse" data-target="#collapseOne">
+        <th></th>
         <th>User Groups</th>
         <th>Roles</th>
-        <th>Permission</th>
+        <th>Location</th>
+        <th>Action</th>
+        
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let list of items ">
-        <td class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" ><button type="button" class="btn btn-default btn-sm" (click)="list.show = !list.show"><span class="fa fa-plus"></span></button> {{list.userGroup}}
-        <div *ngIf="list.show">
-            {{list.user.name}} <br/>
-        </div>
+    <tr *ngFor="let list of items ">
+      <td> <button type="button" class="btn btn-default btn-sm" (click)="list.show = !list.show" style="float: right;"><span 
+        class="fa " [ngClass]="{'fa-plus': !list.show , 'fa-minus': list.show }"></span></button></td>
+       <td class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" >
+        <input type="checkbox">{{list.userGroup}}
+        <ng-container *ngIf="list.show">
+          <div *ngFor="let row of list.users">
+            <span>{{row}}</span>
+          </div>
+        </ng-container>
+        <!-- <div *ngFor="let row of list.users">
+          <div *ngIf="list.show">
+            <span>{{row}}</span>
+          </div>
+        </div> -->
        <!--  <div *ngFor="let subItem of items['user']" >
         {{subItem.name}}<br/>
-        </div> -->
-       </td>
+      </div> -->
+    </td>
 <!--         <td *ngFor="let subList of list.roles "> {{subList.roles}}</td>
- -->         <template let-group ngFor [ngForOf]="items">
+ -->       <!--   <template let-group ngFor [ngForOf]="items">
         <tr *ngFor="let row of group.roles">
           <td>{{row}}<td>
         </tr>
-      </template>
-      <td> {{list.permission[0]}}</td>
-      </tr>
-    </tbody>
-  </table>
+      </template> -->
+      <td >
+        <div *ngFor="let subList of list.roles" style="text-align: center;">
+          <span>{{subList}}</span><br/>
+        </div>
+      </td>
+      <td >
+        <div *ngFor="let subList of list.location" style="text-align: center;">
+          <span>{{subList}}</span>
+        </div>
+      </td> 
+      <td>
+        <div class="btn-group" style="text-align: center;">
+        <button type="button" class="btn btn-default btn"><i class="fa fa-pencil"></i></button>  
+          <button (click)='onDeleteConfirm($event)' type="button" class="btn btn-default" aria-label="Left Align"><i class="fa fa-trash"></i></button> 
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
 </div>
 
-<!-- <template ngFor let-parent [ngForOf]="parents">
-   <div *ngFor="let child of parent.children">
-    </div>
-</template>
-
- -->
