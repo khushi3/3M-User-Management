@@ -9,7 +9,8 @@
     </thead>
     <tbody>
       <tr *ngFor="let list of items ">
-        <td class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" ><button type="button" class="btn btn-default btn-sm" (click)="list.show = !list.show"><span class="fa fa-plus"></span></button> {{list.userGroup}}
+        <td class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" ><button type="button" class="btn btn-default btn-sm" (click)="list.show = !list.show"><span 
+        class="fa " [ngClass]="{'fa-plus': !list.show , 'fa-minus': list.show }"></span></button> {{list.userGroup}}
         <div *ngIf="list.show">
             {{list.user.name}} <br/>
         </div>
