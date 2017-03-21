@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { TablesService  } from './tables.service';
+import { ViewContainerRef, ViewEncapsulation } from '@angular/core';
+import {Http, Response} from '@angular/http';
+
 
 @Component({
   selector: 'dashboard',
@@ -8,6 +11,8 @@ import { TablesService  } from './tables.service';
 })
 export class Dashboard {
   public items = [];
+  public item: string;
+
   constructor(private tableService: TablesService) {
     this.tableService.getJSON().subscribe(data => {
       this.items = data;
@@ -22,4 +27,18 @@ export class Dashboard {
       event.confirm.reject();
     }
   }
+
+
+addItem(item: string) {
+	console.log("inside add")
+        if (item) {
+            this.item = item;
+
+            console.log( "func "+item);
+            this.tableService.addItem(this.item);
+
+
+        }
+    }
+
 }
