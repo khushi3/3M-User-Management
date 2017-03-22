@@ -1,0 +1,18 @@
+<div>
+  <form (ngSubmit)="onSubmit()" [formGroup]="form">
+Hello2
+  <div *ngIf="uis!= undefined"> Hello
+    <div *ngFor="let ui of uis" class="form-row">
+      <df-ui [ui]="ui" [form]="form"></df-ui>
+    </div>
+    <div class="form-row">
+      <button type="submit" [disabled]="!form.valid">Save</button>
+     <!--<button type="submit" >Save</button>-->
+    </div>
+  </div>
+  hello3
+  </form>
+  <div *ngIf="payLoad" class="form-row">
+    <strong>Saved the following values</strong><br>{{payLoad}}
+  </div>
+</div>
