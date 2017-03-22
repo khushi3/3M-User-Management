@@ -57,3 +57,43 @@ button.btn.btn-default {
     tbody {
     font-size: 12px;
 }
+    
+
+ button.btn.btn-default {
+    border-width: 1px;
+    color: #ffffff !important;
+    margin-left: 15px !important;
+    background-color: dimgrey;
+}
+input.form-control {
+    color: #000 !important;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+    background-color: #FAEBD7 !important;
+    box-shadow: none;
+    font-size: 14px;
+    margin-left: -40px;
+    width: 60%;
+   }
+.modal-content {
+    background-color: #A9A9A9 !important;
+}
+
+.modal-footer {
+    padding: 15px;
+    text-align: right;
+    border-top: none;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 60px;
+}
+label {
+    display: inline-block;
+    margin-bottom: .5rem;
+    font-size: 15px !important;
+    margin-top: 10px;
+}
+.row {
+    margin-left: 5px !important;
+    margin-right: -15px;
+}

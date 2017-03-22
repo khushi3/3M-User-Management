@@ -59,3 +59,31 @@
 
 </div>
 
+
+
+<a href="javascript:void(0)" data-toggle="modal" data-target="#myModal" style="float: right;">Create New User Group</a><br/>
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Create New User Group</h4>
+      </div>
+      <div class="modal-body">
+      <div class="row">
+         <div class="col-sm-2"><label>Name</label></div>  
+         <div class="col-sm-10">
+         <input type="text" class="form-control" [(ngModel)]="item" autofocus>
+         </div></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" >Cancel</button>&nbsp;
+         <button type="button" class="btn btn-primary" (click)= "addItem(item)"> Save</button>
+      </div>
+    </div>
+
+  </div>
+</div>
