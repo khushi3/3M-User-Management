@@ -1,0 +1,32 @@
+{
+	"usergroups": [{
+		"groupname": "Admin",
+		"role": "admin",
+		"useradmin": [{
+			"name": "admin1",
+			"role": "admin1"
+		}, {
+			"name": "admin2",
+			"role": "admin2"
+		}, {
+			"name": "admin3",
+			"role": "admin3"
+		}]
+	}, {
+		"groupname": "SME",
+		"role": "SME",
+		"usersme": [{
+			"name": "sme1",
+			"role": "sme1"
+		}, {
+			"name": "sme2",
+			"role": "sme2"
+		}, {
+			"name": "sme3",
+			"role": "sme3"
+		}]
+	}]
+
+
+
+}
