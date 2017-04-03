@@ -10,13 +10,13 @@ export class UiControlService {
   toFormGroup(uis: UiBase<any>[] ) {
     let group: any = {};
 
-    //if(uis != undefined){
+    if(uis != undefined){
       console.log("inside form control")
     	uis.forEach(ui => {
     	group[ui.key] = ui.required ? new FormControl(ui.value || '', Validators.required)
                                                : new FormControl(ui.value || '');
     	});
-    //}
+    }
     
     return new FormGroup(group);
   }
