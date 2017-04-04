@@ -1,0 +1,64 @@
+{
+  "usergrp": [
+    {
+      "name": "priya",
+      "id": 5
+    },
+    {
+      "name": "fgfg",
+      "id": 6
+    },
+    {
+      "name": "kavi",
+      "id": 8
+    },
+    {
+      "name": "newgroup",
+      "id": 9
+    },
+    {
+      "name": "newgroup45",
+      "id": 10
+    },
+    {
+      "name": "gh",
+      "id": 11
+    },
+    {
+      "id": 12,
+      "name": "priya"
+    },
+    {
+      "name": "dffdff",
+      "id": 13
+    },
+    {
+      "name": "Admin",
+      "id": 14
+    },
+    {
+      "name": "mjk",
+      "id": 15
+    },
+    {
+      "name": "sme",
+      "id": 16
+    },
+    {
+      "name": "group",
+      "id": 17
+    },
+    {
+      "name": "group",
+      "roles": [
+        "developer",
+        "tester"
+      ],
+      "id": 18
+    },
+    {
+      "name": "dfg",
+      "id": 19
+    }
+  ]
+}
