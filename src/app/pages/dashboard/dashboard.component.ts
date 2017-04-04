@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TablesService  } from './tables.service';
+import { UserGroupService  } from './usergroup.service';
 import { ViewContainerRef, ViewEncapsulation } from '@angular/core';
 import {Http, Response} from '@angular/http';
 
@@ -10,28 +10,51 @@ import {Http, Response} from '@angular/http';
   templateUrl: './dashboard.html'
 })
 export class Dashboard {
-  public items = [];
-  public item: string;
-  constructor(private tableService: TablesService) {
-    this.tableService.getJSON().subscribe(data => {
-      this.items = data;
+
+  public userGroups = [];
+  public userGroupName : string;
+
+   roles = [
+       {id:0, name: "--Select--"},
+       {id: 1, name: "Create"},
+       {id: 2, name: "Update"},
+       {id: 3, name: "Edit"},
+       {id: 4, name: "Delete"}
+     ];
+
+
+  constructor(private userGroupService : UserGroupService) {
+
+    this.userGroupService.getUserGroups().subscribe(data => {
+      this.userGroups = data;
       console.log(data);
-    }, error => console.log('Could not load List of Service'));
+    }, error => console.log('Could not load userGroups '));
     
   }
+
   removeRecordPlugin(item) {
         // this.recentlyRemoveUsers = this.table.items.remove(item);
     }
-    addItem(item: string) {
-  console.log("inside add")
-        if (item) {
-            this.item = item;
+ 
+  addUserGroup() { //userGrpName : string
+    //console.log("inside add")
+        if (this.userGroupName) {
+            //this.userGroupName = userGrpName;
 
-            console.log( "func "+item);
-            this.tableService.addItem(this.item);
-
-
+            console.log( "func "+this.userGroupName);
+            this.userGroupService.addUserGroup(this.userGroupName).
+                subscribe((r:Response)=>{
+                  console.log(r);
+                });
+            console.log("user group saved successfully!!");
+            
+            window.location.reload();
         }
     }
+
+
+  onEdit(){
+    console.log("clicking on edit")
+  }
 
   }

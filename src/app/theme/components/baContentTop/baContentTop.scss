@@ -19,18 +19,18 @@ h1.al-title {
 
 .al-breadcrumb {
   background: none;
-  color: $default-text;
+  color: #000;
   margin: 0;
   padding-top: 11px;
   li {
     font-size: 18px;
     font-weight: $font-normal;
     a {
-      color: #FFFFFF;
+      color: #000;
     }
 
     &.breadcrumb-item.active {
-      color: #FFFFFF;
+      color: #000;
 
     }
   }
