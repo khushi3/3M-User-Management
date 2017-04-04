@@ -27,13 +27,13 @@
     </thead>
     <tbody>
     <tr *ngFor="let userGrp of userGroups ">
-      <td> <button type="button" class="btn btn-default btn-sm" (click)="userGrp.show = !userGrp.show" style="text-align: center; margin-left: 5px auto;">
+      <td> <button type="button" class="btn btn-default btn-sm" (click)="userGrp.show = !userGrp.show" style="  float: right;">
       <span 
         class="fa " [ngClass]="{'fa-plus': !userGrp.show , 'fa-minus': userGrp.show }"></span></button></td>
        <td>
-        <input type="checkbox"   [(ngModel)]="userGrp.isSelected" style="margin: 12px;">{{userGrp.userGroupName}}
+        <input type="checkbox"   [(ngModel)]="userGrp.isSelected" >{{userGrp.userGroupName}}
         <ng-container *ngIf="userGrp.show">
-          <div *ngFor="let user of userGrp.users" style="margin-left: 28px;">
+          <div *ngFor="let user of userGrp.users" >
             <span>{{user.userName}} - {{user.firstName}} {{user.lastName}}</span><br/>
           </div>
         </ng-container>
@@ -48,7 +48,7 @@
       </div> -->
     </td>
       <td >
-        <div *ngFor="let role of userGrp.roles" style="text-align: center;">
+        <div *ngFor="let role of userGrp.roles">
           <span>{{role.roleName}}</span><br/>
         </div>
       </td>
@@ -116,7 +116,8 @@
   <label>Roles</label>
   <select class="selectpicker">  <option *ngFor="let role of roles" [ngValue]="role">{{role.name}}</option></select>
 </div><br/> -->
-<a href="javascript:void(0)">Add Member</a><br/><br/>
+<span defaultOverlayTarget></span>
+<button (click)="onClick()">Add Members</button><br/><br/>
 <a href="javascript:void(0)">Add Role</a>
   <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" >Cancel</button>&nbsp;
