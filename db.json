@@ -142,19 +142,6 @@
       "users": null
     },
     {
-      "userGroupName": "test",
-      "id": 19,
-      "roles": [
-        {
-          "active": false,
-          "roleId": 3,
-          "roleName": "Super Admin",
-          "roleDesc": "Super Admin",
-          "permissions": null
-        }
-      ]
-    },
-    {
       "userGroupName": "TestGroup",
       "id": 20,
       "roles": [
@@ -168,21 +155,8 @@
       ]
     },
     {
-      "userGroupName": "testGrpTwo",
-      "id": 21,
-      "roles": [
-        {
-          "active": false,
-          "roleId": 3,
-          "roleName": "Super Admin",
-          "roleDesc": "Super Admin",
-          "permissions": null
-        }
-      ]
-    },
-    {
       "userGroupName": "Falcons",
       "id": 22
-    }
+    } 
   ]
 }

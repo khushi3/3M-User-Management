@@ -1,5 +1,7 @@
 <div class="container">
-  <div class="row">
+
+ <div class="row">
+
     <div class="col-xs-12">
       <div class="box box-info">
 
@@ -9,28 +11,33 @@
 
         <!-- /.box-header -->
         <div class="box-body">
-          <table class="table table-hover table-inverse">
-            <thead>
-              <tr class="accordion-toggle"  data-toggle="collapse" data-target="#collapseOne">
-                <th></th>
-                <th>User Groups</th>
-                <th>Roles</th>
-                <th>Location</th>
-                <th>Action</th>
 
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let list of items ">
-                <td> <button type="button" class="btn btn-default btn-sm" (click)="list.show = !list.show" style="float: right;margin: 5px auto;"><span 
-                  class="fa " [ngClass]="{'fa-plus': !list.show , 'fa-minus': list.show }"></span></button></td>
-                  <td>
-                    <input type="checkbox" [(ngModel)]="list.isSelected" style="margin: 12px;">{{list.userGroup}}
-                    <ng-container *ngIf="list.show">
-                      <div *ngFor="let row of list.users" style="margin-left: 28px;">
-                        <span>{{row}}</span><br/>
-                      </div>
-                    </ng-container>
+
+
+  <table class="table table-hover table-inverse">
+    <thead>
+      <tr class="accordion-toggle"  data-toggle="collapse" data-target="#collapseOne">
+        <th></th>
+        <th>User Groups</th>
+        <th>Roles</th>
+         
+        <th>Action</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let userGrp of userGroups ">
+      <td> <button type="button" class="btn btn-default btn-sm" (click)="userGrp.show = !userGrp.show" style="text-align: center; margin-left: 5px auto;">
+      <span 
+        class="fa " [ngClass]="{'fa-plus': !userGrp.show , 'fa-minus': userGrp.show }"></span></button></td>
+       <td>
+        <input type="checkbox"   [(ngModel)]="userGrp.isSelected" style="margin: 12px;">{{userGrp.userGroupName}}
+        <ng-container *ngIf="userGrp.show">
+          <div *ngFor="let user of userGrp.users" style="margin-left: 28px;">
+            <span>{{user.userName}} - {{user.firstName}} {{user.lastName}}</span><br/>
+          </div>
+        </ng-container>
+
         <!-- <div *ngFor="let row of list.users">
           <div *ngIf="list.show">
             <span>{{row}}</span>
@@ -40,26 +47,20 @@
         {{subItem.name}}<br/>
       </div> -->
     </td>
-<!--         <td *ngFor="let subList of list.roles "> {{subList.roles}}</td>
- -->       <!--   <template let-group ngFor [ngForOf]="items">
-        <tr *ngFor="let row of group.roles">
-          <td>{{row}}<td>
-        </tr>
-      </template> -->
       <td >
-        <div *ngFor="let subList of list.roles" style="text-align: center;">
-          <span>{{subList}}</span><br/>
+        <div *ngFor="let role of userGrp.roles" style="text-align: center;">
+          <span>{{role.roleName}}</span><br/>
         </div>
       </td>
-      <td >
-        <div *ngFor="let subList of list.location" style="text-align: center;">
-          <span>{{subList}}</span>
-        </div>
-      </td> 
+    
       <td>
         <div  class="btn-group" style="text-align: center;">
-          <button type="button" class="btn btn-default btn"><i class="fa fa-pencil"></i></button>  
-          <button (click)="removeRecordPlugin(list)" type="button" class="btn btn-default" aria-label="Left Align"><i class="fa fa-trash"></i></button> 
+
+      <button type="button" class="btn btn-default btn" data-toggle="modal" data-target="#editModal" ><i class="fa fa-pencil"></i></button> 
+           
+          <button (click)="removeRecordPlugin(userGrp)" type="button" class="btn btn-default" aria-label="Left Align"><i class="fa fa-trash"></i>
+          </button> 
+
         </div>
 
       </td>
@@ -68,44 +69,90 @@
 </table>
 </div>
 </div></div>
+
 </div>
 
 
 
 <a href="javascript:void(0)" data-toggle="modal" data-target="#myModal" style="float: right;">Create New User Group</a><br/>
-
+<!-- Modal window for new user group -->
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
+
 <div class="box box-info">
+    <div class="box box-info">
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Create New User Group</h4>
       </div>
+        
       <div class="modal-body">
-        <div class="row">
-         <div class="col-sm-2"><label>Name: </label></div>  
-         <div class="col-sm-10">
-           <input type="text" class="form-control" [(ngModel)]="item" autofocus>
-         </div>
-         </div>
-         <div class="row">
-         <div class="col-sm-2"><label>Role: </label></div>  
-         <div class="col-sm-10">
-           <select [(ngModel)]="selectedValue">
-             <option *ngFor="let c of countries" [ngValue]="c">{{c.name}}</option>
-           </select>
-         </div>
-         </div>
-         <div class="row">
-         <div class="col-sm-3"><label>Add Members </label></div>  
-         </div>
-         
-       </div>
-       <div class="modal-footer">
+      <form #grpForm="ngForm">
+      <div class="form-group" class="form-inline">
+      <label for="name">Name </label> 
+      
+         <input type="text" class="form-control" name="name" id="name" [(ngModel)]="userGroupName"  #name="ngModel"  
+         minlength="3" maxlength="15" pattern="[A-Za-z]*" required>
+
+    <div  *ngIf="name.errors && (name.dirty || name.touched)">
+    <div [hidden]="!name.errors.required">
+     Please enter the name
+    </div>
+    <div [hidden]="!name.errors.minlength">
+      Name must be at least 3 characters long.
+    </div>
+    <div [hidden]="!name.errors.maxlength">
+      Name cannot be more than 15 characters long.
+    </div>
+     <div [hidden]="!name.errors.pattern">
+      Name should be alphabets.
+    </div>
+    </div> 
+
+</div><br/>
+<!-- <div  class="form-group" class="form-inline">
+  <label>Roles</label>
+  <select class="selectpicker">  <option *ngFor="let role of roles" [ngValue]="role">{{role.name}}</option></select>
+</div><br/> -->
+<a href="javascript:void(0)">Add Member</a><br/><br/>
+<a href="javascript:void(0)">Add Role</a>
+  <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" >Cancel</button>&nbsp;
-        <button type="button" class="btn btn-primary" (click)= "addItem(item)"> Save</button>
+         <button type="submit" class="btn btn-primary" (click)= "addUserGroup()" [disabled]="!grpForm.form.valid">Create</button>
+      </div>
+  
+    </form>
+
+   
+    
+      </div>
+       
+  
+    </div>
+    </div>
+  </div>
+</div>
+<!-- Modal window for edit user group -->
+<div id="editModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4  class="modal-title">Edit User Group </h4>
+      </div>
+      <div class="modal-body">
+
+        <a href="javascript:void(0)" class="link">Add Members</a><br/><br/>
+        <a href="javascript:void(0)" class="link">Assign Roles</a>
+
+      </div>
+      <div class="modal-footer">
+      <!--   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+
       </div>
     </div>
 </div>
