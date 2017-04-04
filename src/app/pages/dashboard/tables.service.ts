@@ -25,8 +25,10 @@ addItem(item): Observable<any>{
 		console.log("inside service")
 
 		//let headers=new Headers({'Content-Type': 'application/json'});
-		var usrgrp= item;
-		  
+		//var usrgrp= item;
+		var usrgrp =  {
+			   	groupname: 'item'
+	  		};
 	
 		console.log("usrgrp "+usrgrp)
 
@@ -34,7 +36,7 @@ addItem(item): Observable<any>{
 
 		//console.log("returns "+posted)
 		// http://localhost:3000
-		return this.http.post('http://localhost:3000/data/usergrp' ,JSON.stringify(usrgrp), { headers: this.headers }).map(response=> response.json());
+		return this.http.post(' http://localhost:7000/usergroups/usrgrp' ,JSON.stringify(usrgrp), { headers: this.headers }).map(response=> response.json());
 
 
 

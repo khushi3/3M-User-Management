@@ -1,0 +1,94 @@
+{
+  "usergroups": [{
+    "id": 1,
+    "groupname": "Admin",
+    "role": "admin",
+    "admin_users": [{
+      "name": "admin1",
+      "role": "admin1",
+      "permission": "admin1"
+    }, {
+      "name": "admin2",
+      "role": "admin2",
+      "permission": "admin2"
+    }, {
+      "name": "admin3",
+      "role": "admin3",
+      "permission": "admin3"
+    }]
+  }, {
+    "id": 2,
+    "groupname": "SME",
+    "role": "SME",
+    "sme_users": [{
+      "name": "sme1",
+      "role": "sme1",
+      "permission": "sme1"
+    }, {
+      "name": "sme2",
+      "role": "sme2",
+      "permission": "sme2"
+    }, {
+      "name": "sme3",
+      "role": "sme3",
+      "permission": "sme3"
+    }]
+  }],
+  "users": [{
+    "id" : 1,
+    "name": "admin1"
+  }, {
+    "id" : 2,
+    "name": "admin2"
+  }, {
+    "id" : 3,
+    "name": "admin3"
+  }, {
+    "id" : 4,
+    "name": "sme1"
+  }, {
+    "id" : 5,
+    "name": "sme2"
+  }, {
+    "id" : 6,
+    "name": "sme3"
+  }],
+  "roles": [{
+    "id" : 1,
+    "role": "admin1"
+  }, {
+    "id" : 2,
+    "role": "admin2"
+  }, {
+    "id" : 3,
+    "role": "admin3"
+  }, {
+    "id" : 4,
+    "role": "sme1"
+  }, {
+    "id" : 5,
+    "role": "sme2"
+  }, {
+    "id" : 6,
+    "role": "sme3"
+  }],
+  "permissions": [{
+    "id" : 1,
+    "permission": "admin1"
+  }, {
+    "id" : 2,
+    "permission": "admin2"
+  }, {
+    "id" : 3,
+    "permission": "admin3"
+  }, {
+    "id" : 4,
+    "permission": "sme1"
+  }, {
+    "id" : 5,
+    "permission": "sme2"
+  }, {
+    "id" : 6,
+    "permission": "sme3"
+  }]
+}

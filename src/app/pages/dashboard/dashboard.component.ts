@@ -10,6 +10,12 @@ import {Http, Response} from '@angular/http';
   templateUrl: './dashboard.html'
 })
 export class Dashboard {
+  countries = [
+       {id: 1, name: "Create"},
+       {id: 2, name: "Update"},
+       {id: 3, name: "Edit"},
+       {id: 4, name: "Delete"}
+     ];
   public items = [];
   public item: string;
   constructor(private tableService: TablesService) {

@@ -16,7 +16,9 @@ import { PAGES_MENU } from './pages.menu';
       </div>
     </div>
     <footer class="al-footer clearfix">
+      <div class="al-footer-right"><strong> 3M User Management System</strong></div>
       <div class="al-footer-main clearfix">
+       <strong >Copyright &copy; 3MHIS <a href="#"></a></strong> 
       </div>
     </footer>
     <ba-back-top position="200"></ba-back-top>
