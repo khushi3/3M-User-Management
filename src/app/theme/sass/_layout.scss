@@ -74,7 +74,7 @@ a {
   display: block;
   bottom: 0;
   font-size: 13px;
-  color: $default-text;
+  color: #000;
   transition: padding-left 0.5s ease;
 }
 
@@ -138,7 +138,7 @@ a {
 
 .al-content {
   padding: 8px 32px 8px 40px;
-  background-color: #000;
+  background-color: #ecf0f5;
 }
 
 @media screen and (max-width: $resXS) {
