@@ -11,6 +11,7 @@ import {Http, Response} from '@angular/http';
 })
 export class Dashboard {
 
+
   public userGroups = [];
   public userGroupName : string;
 
@@ -22,11 +23,15 @@ export class Dashboard {
        {id: 4, name: "Delete"}
      ];
 
+  public items = [];
+  public item: string;
+
 
   constructor(private userGroupService : UserGroupService) {
 
     this.userGroupService.getUserGroups().subscribe(data => {
       this.userGroups = data;
+
       console.log(data);
     }, error => console.log('Could not load userGroups '));
     

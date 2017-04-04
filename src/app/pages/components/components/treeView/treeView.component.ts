@@ -67,6 +67,20 @@ console.log('on init')
 	if(this.ui != undefined){
 		this.uis = [new CheckboxUi(this.ui.checkbox), new CheckboxUi(this.ui.checkbox2),
     new TextboxUi(this.ui.textbox), new TextboxUi(this.ui.textbox2)];
+
+    /*var dorpDown1 = new DropdownUi();
+
+      let valuesArr : any[];
+      {"key":"IN", "value"="INDIA"}
+      dorpDown.options.options = valuesArr;
+
+
+var dorpDown2 = new DropdownUi();
+
+      let valuesArr : any[];
+      {"key":"IN", "value"="INDIA"}
+      dorpDown.options.options = valuesArr;*/
+
 		//this.uis.sort((a, b) => a.order - b.order);
 		console.log('data populated ' + this.ui)
 		console.log(this.uis)

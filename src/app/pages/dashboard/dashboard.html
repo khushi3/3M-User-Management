@@ -1,5 +1,7 @@
 <div class="container">
+
  <div class="row">
+
     <div class="col-xs-12">
       <div class="box box-info">
 
@@ -9,6 +11,7 @@
 
         <!-- /.box-header -->
         <div class="box-body">
+
 
 
   <table class="table table-hover table-inverse">
@@ -34,6 +37,7 @@
             <span>{{user.userName}} - {{user.firstName}} {{user.lastName}}</span><br/>
           </div>
         </ng-container>
+
         <!-- <div *ngFor="let row of list.users">
           <div *ngIf="list.show">
             <span>{{row}}</span>
@@ -51,19 +55,21 @@
     
       <td>
         <div  class="btn-group" style="text-align: center;">
+
       <button type="button" class="btn btn-default btn" data-toggle="modal" data-target="#editModal" ><i class="fa fa-pencil"></i></button> 
            
           <button (click)="removeRecordPlugin(userGrp)" type="button" class="btn btn-default" aria-label="Left Align"><i class="fa fa-trash"></i>
           </button> 
+
         </div>
-       
+
       </td>
     </tr>
   </tbody>
 </table>
 </div>
-</div>
-</div>
+</div></div>
+
 </div>
 
 
@@ -72,6 +78,8 @@
 <!-- Modal window for new user group -->
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
+
+<div class="box box-info">
     <div class="box box-info">
     <!-- Modal content-->
     <div class="modal-content">
@@ -137,15 +145,16 @@
         <h4  class="modal-title">Edit User Group </h4>
       </div>
       <div class="modal-body">
-         
+
         <a href="javascript:void(0)" class="link">Add Members</a><br/><br/>
         <a href="javascript:void(0)" class="link">Assign Roles</a>
 
       </div>
       <div class="modal-footer">
       <!--   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+
       </div>
     </div>
-
+</div>
   </div>
 </div>

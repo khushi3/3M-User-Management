@@ -1,6 +1,6 @@
 <div>
   <form (ngSubmit)="onSubmit()" [formGroup]="form">
-Hello2
+
   <div *ngIf="uis!= undefined"> Hello
     <div *ngFor="let ui of uis" class="form-row">
       <df-ui [ui]="ui" [form]="form"></df-ui>
@@ -10,7 +10,7 @@ Hello2
      <!--<button type="submit" >Save</button>-->
     </div>
   </div>
-  hello3
+  
   </form>
   <div *ngIf="payLoad" class="form-row">
     <strong>Saved the following values</strong><br>{{payLoad}}
