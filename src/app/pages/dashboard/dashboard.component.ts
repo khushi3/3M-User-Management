@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { UserGroupService  } from './usergroup.service';
 import { ViewContainerRef, ViewEncapsulation } from '@angular/core';
 import {Http, Response} from '@angular/http';
+import { PaginationModule } from 'ng2-bootstrap';
 
 
 @Component({
@@ -15,16 +16,39 @@ export class Dashboard {
   public userGroups = [];
   public userGroupName : string;
 
-   roles = [
-       {id:0, name: "--Select--"},
-       {id: 1, name: "Create"},
-       {id: 2, name: "Update"},
-       {id: 3, name: "Edit"},
-       {id: 4, name: "Delete"}
-     ];
+  public users=  [ {
+          active: false,
+          userId: 5,
+          userName: "A1237ZZ",
+          firstName: "Sandeep",
+          lastName: "N"
+        },
+        {
+          active: false,
+          userId: 6,
+          userName: "A1238ZZ",
+          firstName: "Saurah",
+          lastName: "S"
+        }];
+  public roles=[ {
+      active: false,
+      roleId: 3,
+      roleName: "Super Admin",
+      roleDesc: "Super Admin",
+      permissions: null
+    },
+    {
+      active: false,
+      roleId: 4,
+      roleName: "Approver",
+      roleDesc: "Approves concepts",
+      permissions: null
+    }
+    ];
 
   public items = [];
   public item: string;
+ 
 
 
   constructor(private userGroupService : UserGroupService) {
@@ -47,7 +71,7 @@ export class Dashboard {
             //this.userGroupName = userGrpName;
 
             console.log( "func "+this.userGroupName);
-            this.userGroupService.addUserGroup(this.userGroupName).
+            this.userGroupService.addUserGroup(this.userGroupName,this.users,this.roles).
                 subscribe((r:Response)=>{
                   console.log(r);
                 });
@@ -61,5 +85,8 @@ export class Dashboard {
   onEdit(){
     console.log("clicking on edit")
   }
+ 
+ 
+
 
   }

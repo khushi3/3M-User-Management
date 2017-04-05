@@ -94,7 +94,7 @@
       <label for="name">Name </label> 
       
          <input type="text" class="form-control" name="name" id="name" [(ngModel)]="userGroupName"  #name="ngModel"  
-         minlength="3" maxlength="15" pattern="[A-Za-z]*" required>
+         minlength="3" maxlength="15" pattern="[A-Za-z0-9]*" required>
 
     <div  *ngIf="name.errors && (name.dirty || name.touched)">
     <div [hidden]="!name.errors.required">
@@ -107,7 +107,7 @@
       Name cannot be more than 15 characters long.
     </div>
      <div [hidden]="!name.errors.pattern">
-      Name should be alphabets.
+      Name should be alphanumerics.
     </div>
     </div> 
 
@@ -116,23 +116,23 @@
   <label>Roles</label>
   <select class="selectpicker">  <option *ngFor="let role of roles" [ngValue]="role">{{role.name}}</option></select>
 </div><br/> -->
-<a href="javascript:void(0)">Add Member</a><br/><br/>
-<a href="javascript:void(0)">Add Role</a>
+<a href="javascript:void(0)" >Add Member</a><br/><br/>
+<a href="javascript:void(0)" >Add Role</a>
   <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" >Cancel</button>&nbsp;
-         <button type="submit" class="btn btn-primary" (click)= "addUserGroup()" [disabled]="!grpForm.form.valid">Create</button>
+         <button type="submit" class="btn btn-primary" data-dismiss="modal" (click)= "addUserGroup()" [disabled]="!grpForm.form.valid">Create</button>
       </div>
   
     </form>
 
    
-    
-      </div>
-       
-  
-    </div>
+   </div>
+   
+  </div>
     </div>
   </div>
+</div>
+
 </div>
 <!-- Modal window for edit user group -->
 <div id="editModal" class="modal fade" role="dialog">
@@ -157,4 +157,8 @@
     </div>
 </div>
   </div>
+
+  
+
+  
 </div>

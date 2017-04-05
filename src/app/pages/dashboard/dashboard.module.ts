@@ -12,6 +12,7 @@ import { routing }       from './dashboard.routing';
 import { UsersMap } from './usersMap';
 import { UsersMapService } from './usersMap/usersMap.service';
 import { UserGroupService  } from './usergroup.service';
+import { PaginationModule } from 'ng2-bootstrap';
 
 
 @NgModule({
@@ -20,8 +21,9 @@ import { UserGroupService  } from './usergroup.service';
     FormsModule,
     NgaModule,
     routing,
-    ModalModule.forRoot(),
-    BootstrapModalModule
+    ModalModule,
+    BootstrapModalModule,
+    PaginationModule.forRoot()
   ],
   declarations: [
     UsersMap,

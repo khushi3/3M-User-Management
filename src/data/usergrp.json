@@ -182,11 +182,208 @@
     },
     {
       "userGroupName": "Falcons",
-      "id": 22
+       "id": 22
+    },
+    
+    {
+      "userGroupName": "group5",
+      "users": [
+        {
+          "active": false,
+          "userId": 5,
+          "userName": "A1237ZZ",
+          "firstName": "Sandeep",
+          "lastName": "N"
+        },
+        {
+          "active": false,
+          "userId": 6,
+          "userName": "A1238ZZ",
+          "firstName": "Saurah",
+          "lastName": "S"
+        }
+      ],
+      "roles": [
+        {
+          "active": false,
+          "roleId": 3,
+          "roleName": "Super Admin",
+          "roleDesc": "Super Admin",
+          "permissions": null
+        },
+        {
+          "active": false,
+          "roleId": 4,
+          "roleName": "Approver",
+          "roleDesc": "Approves concepts",
+          "permissions": null
+        }
+      ],
+      "id": 27
     },
     {
-      "userGroupName": "fghghg",
-      "id": 23
+      "userGroupName": "group6",
+      "users": [
+        {
+          "active": false,
+          "userId": 5,
+          "userName": "A1237ZZ",
+          "firstName": "Sandeep",
+          "lastName": "N"
+        },
+        {
+          "active": false,
+          "userId": 6,
+          "userName": "A1238ZZ",
+          "firstName": "Saurah",
+          "lastName": "S"
+        }
+      ],
+      "roles": [
+        {
+          "active": false,
+          "roleId": 3,
+          "roleName": "Super Admin",
+          "roleDesc": "Super Admin",
+          "permissions": null
+        },
+        {
+          "active": false,
+          "roleId": 4,
+          "roleName": "Approver",
+          "roleDesc": "Approves concepts",
+          "permissions": null
+        }
+      ],
+      "id": 28
+    }
+  ],
+  "users": [
+    {
+      "active": false,
+      "userId": 1,
+      "userName": "A6s35zz",
+      "firstName": "Ramu",
+      "lastName": "V"
+    },
+    {
+      "active": false,
+      "userId": 2,
+      "userName": "A1234ZZ",
+      "firstName": "Parthiban",
+      "lastName": "M"
+    },
+    {
+      "active": false,
+      "userId": 3,
+      "userName": "A1235ZZ",
+      "firstName": "Khushboo",
+      "lastName": "Bh"
+    },
+    {
+      "active": false,
+      "userId": 4,
+      "userName": "A1236ZZ",
+      "firstName": "Ravi Kiran",
+      "lastName": "R G"
+    },
+    {
+      "active": false,
+      "userId": 5,
+      "userName": "A1237ZZ",
+      "firstName": "Sandeep",
+      "lastName": "N"
+    },
+    {
+      "active": false,
+      "userId": 6,
+      "userName": "A1238ZZ",
+      "firstName": "Saurah",
+      "lastName": "S"
+    }
+  ],
+  "roles": [
+    {
+      "active": false,
+      "roleId": 1,
+      "roleName": "Admin",
+      "roleDesc": "Can create & release branch",
+      "permissions": null
+    },
+    {
+      "active": false,
+      "roleId": 2,
+      "roleName": "SME",
+      "roleDesc": "Subject Matter Expert",
+      "permissions": [
+        {
+          "active": false,
+          "permissionId": 1,
+          "permissionName": "Create Concept",
+          "permissionDesc": "create concept"
+        },
+        {
+          "active": false,
+          "permissionId": 2,
+          "permissionName": "Add Variant",
+          "permissionDesc": "Add Variant to concept"
+        }
+      ]
+    },
+    {
+      "active": false,
+      "roleId": 3,
+      "roleName": "Super Admin",
+      "roleDesc": "Super Admin",
+      "permissions": null
+    },
+    {
+      "active": false,
+      "roleId": 4,
+      "roleName": "Approver",
+      "roleDesc": "Approves concepts",
+      "permissions": null
+    },
+    {
+      "active": false,
+      "roleId": 5,
+      "roleName": "Test Role1",
+      "roleDesc": "Test Role1",
+      "permissions": null
+    },
+    {
+      "active": false,
+      "roleId": 6,
+      "roleName": "Test Role2",
+      "roleDesc": "Test Role2",
+      "permissions": null
+    }
+  ],
+  "permission": [
+    {
+      "active": false,
+      "permissionId": 1,
+      "permissionName": "Create Concept",
+      "permissionDesc": "create concept"
+    },
+    {
+      "active": false,
+      "permissionId": 2,
+      "permissionName": "Add Variant",
+      "permissionDesc": "Add Variant to concept"
+    },
+    {
+      "active": false,
+      "permissionId": 3,
+      "permissionName": "Create Branch",
+      "permissionDesc": "Create a new Branch"
+    },
+    {
+      "active": false,
+      "permissionId": 4,
+      "permissionName": "Release Branch",
+      "permissionDesc": "Release a Branch"
+ 
     }
   ]
 }
