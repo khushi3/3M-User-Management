@@ -27,13 +27,13 @@
     </thead>
     <tbody>
     <tr *ngFor="let userGrp of userGroups ">
-      <td> <button type="button" class="btn btn-default btn-sm" (click)="userGrp.show = !userGrp.show" style="text-align: center; margin-left: 5px auto;">
+      <td> <button type="button" class="btn btn-default btn-sm" (click)="userGrp.show = !userGrp.show" style="  float: right;">
       <span 
         class="fa " [ngClass]="{'fa-plus': !userGrp.show , 'fa-minus': userGrp.show }"></span></button></td>
        <td>
-        <input type="checkbox"   [(ngModel)]="userGrp.isSelected" style="margin: 12px;">{{userGrp.userGroupName}}
+        <input type="checkbox"   [(ngModel)]="userGrp.isSelected" >{{userGrp.userGroupName}}
         <ng-container *ngIf="userGrp.show">
-          <div *ngFor="let user of userGrp.users" style="margin-left: 28px;">
+          <div *ngFor="let user of userGrp.users" >
             <span>{{user.userName}} - {{user.firstName}} {{user.lastName}}</span><br/>
           </div>
         </ng-container>
@@ -48,7 +48,7 @@
       </div> -->
     </td>
       <td >
-        <div *ngFor="let role of userGrp.roles" style="text-align: center;">
+        <div *ngFor="let role of userGrp.roles">
           <span>{{role.roleName}}</span><br/>
         </div>
       </td>
@@ -94,7 +94,7 @@
       <label for="name">Name </label> 
       
          <input type="text" class="form-control" name="name" id="name" [(ngModel)]="userGroupName"  #name="ngModel"  
-         minlength="3" maxlength="15" pattern="[A-Za-z0-9]*" required>
+         minlength="3" maxlength="15" pattern="[A-Za-z]*" required>
 
     <div  *ngIf="name.errors && (name.dirty || name.touched)">
     <div [hidden]="!name.errors.required">
@@ -107,7 +107,7 @@
       Name cannot be more than 15 characters long.
     </div>
      <div [hidden]="!name.errors.pattern">
-      Name should be alphanumerics.
+      Name should be alphabets.
     </div>
     </div> 
 
@@ -116,23 +116,24 @@
   <label>Roles</label>
   <select class="selectpicker">  <option *ngFor="let role of roles" [ngValue]="role">{{role.name}}</option></select>
 </div><br/> -->
-<a href="javascript:void(0)" >Add Member</a><br/><br/>
-<a href="javascript:void(0)" >Add Role</a>
+<span defaultOverlayTarget></span>
+<button (click)="onClick()">Add Members</button><br/><br/>
+<a href="javascript:void(0)">Add Role</a>
   <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" >Cancel</button>&nbsp;
-         <button type="submit" class="btn btn-primary" data-dismiss="modal" (click)= "addUserGroup()" [disabled]="!grpForm.form.valid">Create</button>
+         <button type="submit" class="btn btn-primary" (click)= "addUserGroup()" [disabled]="!grpForm.form.valid">Create</button>
       </div>
   
     </form>
 
    
-   </div>
-   
-  </div>
+    
+      </div>
+       
+  
+    </div>
     </div>
   </div>
-</div>
-
 </div>
 <!-- Modal window for edit user group -->
 <div id="editModal" class="modal fade" role="dialog">
@@ -157,8 +158,4 @@
     </div>
 </div>
   </div>
-
-  
-
-  
 </div>

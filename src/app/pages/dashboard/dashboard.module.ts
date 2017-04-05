@@ -12,7 +12,8 @@ import { routing }       from './dashboard.routing';
 import { UsersMap } from './usersMap';
 import { UsersMapService } from './usersMap/usersMap.service';
 import { UserGroupService  } from './usergroup.service';
-import { PaginationModule } from 'ng2-bootstrap';
+import { DualListComponent } from './dual-list.component';
+import { CustomModal } from './custom-modal-sample';
 
 
 @NgModule({
@@ -21,13 +22,14 @@ import { PaginationModule } from 'ng2-bootstrap';
     FormsModule,
     NgaModule,
     routing,
-    ModalModule,
-    BootstrapModalModule,
-    PaginationModule.forRoot()
+    ModalModule.forRoot(),
+    BootstrapModalModule
   ],
   declarations: [
     UsersMap,
-    Dashboard
+    Dashboard,
+    DualListComponent,
+    CustomModal
   ],
   providers: [
     UsersMapService,

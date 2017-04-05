@@ -2,13 +2,18 @@ import { Component } from '@angular/core';
 import { UserGroupService  } from './usergroup.service';
 import { ViewContainerRef, ViewEncapsulation } from '@angular/core';
 import {Http, Response} from '@angular/http';
-import { PaginationModule } from 'ng2-bootstrap';
-
+import { Modal, BSModalContext } from 'angular2-modal/plugins/bootstrap';
+import { Overlay, overlayConfigFactory } from 'angular2-modal';
+import { CustomModal } from './custom-modal-sample';
 
 @Component({
   selector: 'dashboard',
   styleUrls: ['./dashboard.scss'],
-  templateUrl: './dashboard.html'
+  templateUrl: './dashboard.html',
+  providers: [Modal],
+  entryComponents: [
+    CustomModal
+  ]
 })
 export class Dashboard {
 
@@ -16,67 +21,43 @@ export class Dashboard {
   public userGroups = [];
   public userGroupName : string;
 
-  public users=  [ {
-          active: false,
-          userId: 5,
-          userName: "A1237ZZ",
-          firstName: "Sandeep",
-          lastName: "N"
-        },
-        {
-          active: false,
-          userId: 6,
-          userName: "A1238ZZ",
-          firstName: "Saurah",
-          lastName: "S"
-        }];
-  public roles=[ {
-      active: false,
-      roleId: 3,
-      roleName: "Super Admin",
-      roleDesc: "Super Admin",
-      permissions: null
-    },
-    {
-      active: false,
-      roleId: 4,
-      roleName: "Approver",
-      roleDesc: "Approves concepts",
-      permissions: null
-    }
-    ];
+   // roles = [
+   //     {id:0, name: "--Select--"},
+   //     {id: 1, name: "Create"},
+   //     {id: 2, name: "Update"},
+   //     {id: 3, name: "Edit"},
+   //     {id: 4, name: "Delete"}
+   //   ];
 
   public items = [];
   public item: string;
- 
 
-
-  constructor(private userGroupService : UserGroupService) {
+  constructor(private userGroupService : UserGroupService,public modal: Modal) {
 
     this.userGroupService.getUserGroups().subscribe(data => {
       this.userGroups = data;
 
       console.log(data);
     }, error => console.log('Could not load userGroups '));
-    
+
   }
 
   removeRecordPlugin(item) {
         // this.recentlyRemoveUsers = this.table.items.remove(item);
     }
- 
+
   addUserGroup() { //userGrpName : string
     //console.log("inside add")
         if (this.userGroupName) {
             //this.userGroupName = userGrpName;
 
             console.log( "func "+this.userGroupName);
-            this.userGroupService.addUserGroup(this.userGroupName,this.users,this.roles).
+            this.userGroupService.addUserGroup(this.userGroupName).
                 subscribe((r:Response)=>{
                   console.log(r);
                 });
             console.log("user group saved successfully!!");
-            
+
             window.location.reload();
         }
     }
@@ -85,8 +66,8 @@ export class Dashboard {
   onEdit(){
     console.log("clicking on edit")
   }
- 
- 
-
+ onClick() {
+   this.modal.open(CustomModal, overlayConfigFactory({ num1: 2, num2: 3 }, BSModalContext));
+  }
 
   }

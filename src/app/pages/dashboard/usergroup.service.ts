@@ -19,19 +19,16 @@ public getUserGroups(): Observable<any>  {
 		.map(response => response.json());
 }
 
-public addUserGroup(userGroupName,users,roles): Observable<any> {
+public addUserGroup(userGroupName): Observable<any> {
 		console.log("inside service")
 
 		var userGroup = {
-			"userGroupName" : userGroupName,
-			"users": users,
-			"roles": roles
+			"userGroupName" : userGroupName
 		}
-		 
+		  
 		return this.http.post('http://localhost:7000/usergrp' ,JSON.stringify(userGroup), { headers: this.headers })
 						.map(response=> response.json());
 		}
 
 	}
  
-
