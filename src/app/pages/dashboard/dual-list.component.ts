@@ -66,7 +66,7 @@ class BasicList {
 				style="width:47%;float:left;" (click)="selectAll(available)"
 				[disabled]="isAllSelected(available)">All</button>
 			<button type="button" class="btn btn-default"
-				style="width:47%;float:right;margin-right:0px;" (click)="selectNone(available)"
+				style="width:47%;float:right;margin-right:0px; color: black;" (click)="selectNone(available)"
 				[disabled]="!isAnySelected(available)">None</button>
 		</div>
 	</form>
@@ -96,7 +96,7 @@ class BasicList {
 				style="width:47%;float:left;" (click)="selectAll(confirmed)"
 				[disabled]="isAllSelected(confirmed)">All</button>
 			<button type="button" class="btn btn-default"
-				style="width:47%;float:right;margin-right:0px;" (click)="selectNone(confirmed)"
+				style="width:47%;float:right;margin-right:0px; color: black;" (click)="selectNone(confirmed)"
 				[disabled]="!isAnySelected(confirmed)">None</button>
 		</div>
 	</form>

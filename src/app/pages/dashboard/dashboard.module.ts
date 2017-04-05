@@ -13,6 +13,7 @@ import { UsersMap } from './usersMap';
 import { UsersMapService } from './usersMap/usersMap.service';
 import { UserGroupService  } from './usergroup.service';
 import { DualListComponent } from './dual-list.component';
+import { CustomModal } from './custom-modal-sample';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { DualListComponent } from './dual-list.component';
   declarations: [
     UsersMap,
     Dashboard,
-    DualListComponent
+    DualListComponent,
+    CustomModal
   ],
   providers: [
     UsersMapService,
