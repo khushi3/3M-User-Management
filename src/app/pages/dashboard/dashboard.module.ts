@@ -12,6 +12,8 @@ import { routing }       from './dashboard.routing';
 import { UsersMap } from './usersMap';
 import { UsersMapService } from './usersMap/usersMap.service';
 import { UserGroupService  } from './usergroup.service';
+import { DualListComponent } from './dual-list.component';
+import { CustomModal } from './custom-modal-sample';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { UserGroupService  } from './usergroup.service';
   ],
   declarations: [
     UsersMap,
-    Dashboard
+    Dashboard,
+    DualListComponent,
+    CustomModal
   ],
   providers: [
     UsersMapService,
