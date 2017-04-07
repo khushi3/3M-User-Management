@@ -15,11 +15,8 @@ export const routes: Routes = [
     path: 'pages',
     component: Pages,
     children: [
-      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-      { path: 'dashboard', loadChildren: 'app/pages/dashboard/dashboard.module#DashboardModule' },
-      { path: 'editors', loadChildren: 'app/pages/editors/editors.module#EditorsModule' },
-      { path: 'components', loadChildren: 'app/pages/components/components.module#ComponentsModule' },
-      { path: 'tables', loadChildren: 'app/pages/tables/tables.module#TablesModule' },
+      { path: '', redirectTo: 'user-management', pathMatch: 'full' },
+      { path: 'user-management', loadChildren: 'app/pages/user-management/user-management.module#UserManagementModule' },
     ]
   }
 ];

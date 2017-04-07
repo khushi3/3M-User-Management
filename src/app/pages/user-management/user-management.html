@@ -1,0 +1,164 @@
+<div class="container">
+
+ <div class="row">
+
+    <div class="col-xs-12">
+      <div class="box box-info">
+
+        <div class="box-header with-border">
+          <h3 class="box-title">List of User Groups</h3>
+        </div>
+
+        <!-- /.box-header -->
+        <div class="box-body">
+
+
+
+  <table class="table table-hover table-inverse">
+    <thead>
+      <tr class="accordion-toggle"  data-toggle="collapse" data-target="#collapseOne">
+        <th></th>
+        <th>User Groups</th>
+        <th>Roles</th>
+         
+        <th>Action</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let userGrp of userGroups ">
+      <td> <button type="button" class="btn btn-default btn-sm" (click)="userGrp.show = !userGrp.show" style="  float: right;">
+      <span 
+        class="fa " [ngClass]="{'fa-plus': !userGrp.show , 'fa-minus': userGrp.show }"></span></button></td>
+       <td>
+        <input type="checkbox"   [(ngModel)]="userGrp.isSelected" >{{userGrp.userGroupName}}
+        <ng-container *ngIf="userGrp.show">
+          <div *ngFor="let user of userGrp.users" >
+            <span>{{user.userName}} - {{user.firstName}} {{user.lastName}}</span><br/>
+          </div>
+        </ng-container>
+
+        <!-- <div *ngFor="let row of list.users">
+          <div *ngIf="list.show">
+            <span>{{row}}</span>
+          </div>
+        </div> -->
+       <!--  <div *ngFor="let subItem of items['user']" >
+        {{subItem.name}}<br/>
+      </div> -->
+    </td>
+      <td >
+        <div *ngFor="let role of userGrp.roles">
+          <span>{{role.roleName}}</span><br/>
+        </div>
+      </td>
+    
+      <td>
+        <div  class="btn-group" style="text-align: center;">
+
+      <button type="button" class="btn btn-default btn" data-toggle="modal" data-target="#editModal" ><i class="fa fa-pencil"></i></button> 
+           
+          <button (click)="removeRecordPlugin(userGrp)" type="button" class="btn btn-default" aria-label="Left Align"><i class="fa fa-trash"></i>
+          </button> 
+
+        </div>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div></div>
+
+</div>
+
+
+
+<a href="javascript:void(0)" data-toggle="modal" data-target="#myModal" style="float: right;">Create New User Group</a><br/>
+<!-- Modal window for new user group -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+<div class="box box-info">
+    <div class="box box-info">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Create New User Group</h4>
+      </div>
+        
+      <div class="modal-body">
+      <form #grpForm="ngForm">
+      <div class="form-group" class="form-inline">
+      <label for="name">Name </label> 
+      
+         <input type="text" class="form-control" name="name" id="name" [(ngModel)]="userGroupName"  #name="ngModel"  
+         minlength="3" maxlength="15" pattern="[A-Za-z]*" required>
+
+    <div  *ngIf="name.errors && (name.dirty || name.touched)">
+    <div [hidden]="!name.errors.required">
+     Please enter the name
+    </div>
+    <div [hidden]="!name.errors.minlength">
+      Name must be at least 3 characters long.
+    </div>
+    <div [hidden]="!name.errors.maxlength">
+      Name cannot be more than 15 characters long.
+    </div>
+     <div [hidden]="!name.errors.pattern">
+      Name should be alphabets.
+    </div>
+    </div> 
+
+</div><br/>
+<!-- <div  class="form-group" class="form-inline">
+  <label>Roles</label>
+  <select class="selectpicker">  <option *ngFor="let role of roles" [ngValue]="role">{{role.name}}</option></select>
+</div><br/> -->
+<ng-container *ngIf="!name.errors">
+<span defaultOverlayTarget></span>
+<button (click)="onClick()">Add Members</button><br/><br/>
+<a href="javascript:void(0)">Add Role</a>
+</ng-container>
+  <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" >Cancel</button>&nbsp;
+         <button type="submit" class="btn btn-primary" (click)= "addUserGroup()" [disabled]="!grpForm.form.valid">Create</button>
+      </div>
+  
+    </form>
+
+   
+    
+      </div>
+       
+  
+    </div>
+    </div>
+  </div>
+</div>
+<!-- Modal window for edit user group -->
+<div id="editModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4  class="modal-title">Edit User Group </h4>
+      </div>
+      <div class="modal-body">
+
+        <a href="javascript:void(0)" class="link">Add Members</a><br/><br/>
+        <a href="javascript:void(0)" class="link">Assign Roles</a>
+
+      </div>
+      <div class="modal-footer">
+      <!--   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+
+      </div>
+    </div>
+</div>
+  </div>
+</div>
+
