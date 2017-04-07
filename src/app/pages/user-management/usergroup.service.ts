@@ -19,17 +19,20 @@ public getUserGroups(): Observable<any>  {
 		.map(response => response.json());
 }
 
+public getStations(): Observable<any> {
+  return this.http.get('http://localhost:7000/stations')
+		.map(response => response.json());
+}
+
 public addUserGroup(userGroupName): Observable<any> {
 		console.log("inside service")
 
 		var userGroup = {
 			"userGroupName" : userGroupName
 		}
-		  
+
 		return this.http.post('http://localhost:7000/usergrp' ,JSON.stringify(userGroup), { headers: this.headers })
 						.map(response=> response.json());
 		}
 
 	}
- 
-

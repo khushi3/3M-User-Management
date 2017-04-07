@@ -2,50 +2,40 @@ import { Component } from '@angular/core';
 
 import { DialogRef, ModalComponent, CloseGuard } from 'angular2-modal';
 import { BSModalContext } from 'angular2-modal/plugins/bootstrap/index';
-import { DualListService  } from './dual-list.service';
-import { Modal } from 'angular2-modal/plugins/bootstrap';
-import { ModalService } from './modal.service';
-
-// import {NGL_DIRECTIVES, provideNglConfig} from 'ng-lightning/ng-lightning';
-
+import { UserGroupService  } from './usergroup.service';
 export class CustomModalContext extends BSModalContext {
   public num1: number;
   public num2: number;
-
 }
 
 /**
  * A Sample of how simple it is to create a new window, with its own injects.
  */
-
 @Component({
   selector: 'modal-content',
-  styleUrls: ['./custom-modal.scss'],
+   styleUrls: ['./custom-modal.scss'],
+
+  //TODO: [ngClass] here on purpose, no real use, just to show how to workaround ng2 issue #4330.
+  // Remove when solved.
   templateUrl: './custom-modal.html',
-  providers: [Modal]
- 
+  
 })
 export class CustomModal implements CloseGuard, ModalComponent<CustomModalContext> {
   context: CustomModalContext;
+
   public wrongAnswer: boolean;
   public shouldUseMyClass: boolean;
-
-
-
-  constructor(public dialog: DialogRef<CustomModalContext> ,private dualListService : DualListService,private modalService: ModalService) {
+  private sourceStations:Array<any>;
+  constructor(private userGroupService : UserGroupService, public dialog: DialogRef<CustomModalContext>) {
     this.context = dialog.context;
     this.wrongAnswer = true;
     dialog.setCloseGuard(this);
-      this.dualListService.getUserGroups().subscribe(data => {
-      this.userGroups = data;
+    this.userGroupService.getStations().subscribe(data => {
+      this.sourceStations = data;
 
-      console.log(data);
+      console.log("new",data);
     }, error => console.log('Could not load userGroups '));
-
   }
-    closeModal(id: string){
-        this.modalService.close(id);
-    }
 
   onKeyUp(value) {
     this.wrongAnswer = value != 5;
@@ -71,7 +61,7 @@ export class CustomModal implements CloseGuard, ModalComponent<CustomModalContex
   private source:Array<any>;
   private confirmed:Array<any>;
 
-  private sourceStations:Array<any>;
+
   private sourceChessmen:Array<any>;
 
   private confirmedStations:Array<any>;
@@ -80,52 +70,50 @@ export class CustomModal implements CloseGuard, ModalComponent<CustomModalContex
   private toggle:boolean = true;
 
   private userAdd:string = '';
-  public userGroups = [];
 
+  private stations:Array<any> = [
+    { key: 1, station: 'Antonito', state: 'CO' },
+    { key: 2, station: 'Big Horn', state: 'NM' },
+    { key: 3, station: 'Sublette', state: 'NM' },
+    { key: 4, station: 'Toltec', state: 'NM' },
+    { key: 5, station: 'Osier', state: 'CO' },
+    { key: 6, station: 'Chama', state: 'NM'},
+    { key: 7, station: 'Monero', state: 'NM' },
+    { key: 8, station: 'Lumberton', state: 'NM' },
+    { key: 9, station: 'Duice', state: 'NM' },
+    { key: 10, station: 'Navajo', state: 'NM' },
+    { key: 11, station: 'Juanita', state: 'CO' },
+    { key: 12, station: 'Pagosa Jct', state: 'CO' },
+    { key: 13, station: 'Carracha', state: 'CO' },
+    { key: 14, station: 'Arboles', state: 'CO' },
+    { key: 15, station: 'Solidad', state: 'CO' },
+    { key: 16, station: 'Tiffany', state: 'CO' },
+    { key: 17, station: 'La Boca', state: 'CO' },
+    { key: 18, station: 'Ignacio', state: 'CO' },
+    { key: 19, station: 'Oxford', state: 'CO' },
+    { key: 20, station: 'Florida', state: 'CO' },
+    { key: 21, station: 'Bocea', state: 'CO' },
+    { key: 22, station: 'Carbon Jct', state: 'CO' },
+    { key: 23, station: 'Durango', state: 'CO' },
+    { key: 24, station: 'Home Ranch', state: 'CO' },
+    { key: 25, station: 'Trimble Springs', state: 'CO' },
+    { key: 26, station: 'Hermosa', state: 'CO' },
+    { key: 27, station: 'Rockwood', state: 'CO' },
+    { key: 28, station: 'Tacoma', state: 'CO' },
+    { key: 29, station: 'Needleton', state: 'CO' },
+    { key: 30, station: 'Elk Park', state: 'CO' },
+    { key: 31, station: 'Silverton', state: 'CO' },
+    { key: 32, station: 'Eureka', state: 'CO' }
+   ];
 
-  // private stations:Array<any> = [
-  //   { key: 1, station: 'Antonito', state: 'CO' },
-  //   { key: 2, station: 'Big Horn', state: 'NM' },
-  //   { key: 3, station: 'Sublette', state: 'NM' },
-  //   { key: 4, station: 'Toltec', state: 'NM' },
-  //   { key: 5, station: 'Osier', state: 'CO' },
-  //   { key: 6, station: 'Chama', state: 'NM'},
-  //   { key: 7, station: 'Monero', state: 'NM' },
-  //   { key: 8, station: 'Lumberton', state: 'NM' },
-  //   { key: 9, station: 'Duice', state: 'NM' },
-  //   { key: 10, station: 'Navajo', state: 'NM' },
-  //   { key: 11, station: 'Juanita', state: 'CO' },
-  //   { key: 12, station: 'Pagosa Jct', state: 'CO' },
-  //   { key: 13, station: 'Carracha', state: 'CO' },
-  //   { key: 14, station: 'Arboles', state: 'CO' },
-  //   { key: 15, station: 'Solidad', state: 'CO' },
-  //   { key: 16, station: 'Tiffany', state: 'CO' },
-  //   { key: 17, station: 'La Boca', state: 'CO' },
-  //   { key: 18, station: 'Ignacio', state: 'CO' },
-  //   { key: 19, station: 'Oxford', state: 'CO' },
-  //   { key: 20, station: 'Florida', state: 'CO' },
-  //   { key: 21, station: 'Bocea', state: 'CO' },
-  //   { key: 22, station: 'Carbon Jct', state: 'CO' },
-  //   { key: 23, station: 'Durango', state: 'CO' },
-  //   { key: 24, station: 'Home Ranch', state: 'CO' },
-  //   { key: 25, station: 'Trimble Springs', state: 'CO' },
-  //   { key: 26, station: 'Hermosa', state: 'CO' },
-  //   { key: 27, station: 'Rockwood', state: 'CO' },
-  //   { key: 28, station: 'Tacoma', state: 'CO' },
-  //   { key: 29, station: 'Needleton', state: 'CO' },
-  //   { key: 30, station: 'Elk Park', state: 'CO' },
-  //   { key: 31, station: 'Silverton', state: 'CO' },
-  //   { key: 32, station: 'Eureka', state: 'CO' }
-  //  ];
-
-  // private chessmen:Array<any> = [
-  //   { _id: 1, name: "Pawn" },
-  //   { _id: 2, name: "Rook" },
-  //   { _id: 3, name: "Knight" },
-  //   { _id: 4, name: "Bishop" },
-  //   { _id: 5, name: "Queen" },
-  //   { _id: 6, name: "King" }
-  // ];
+  private chessmen:Array<any> = [
+    { _id: 1, name: "Pawn" },
+    { _id: 2, name: "Rook" },
+    { _id: 3, name: "Knight" },
+    { _id: 4, name: "Bishop" },
+    { _id: 5, name: "Queen" },
+    { _id: 6, name: "King" }
+  ];
 
   ngOnInit() {
     this.doReset();
@@ -134,7 +122,7 @@ export class CustomModal implements CloseGuard, ModalComponent<CustomModalContex
   private useStations() {
     this.toggle = true;
     this.key = 'key';
-    this.display = 'userGroups';
+    this.display = 'station';
     this.keepSorted = true;
     this.source = this.sourceStations;;
     this.confirmed = this.confirmedStations;
@@ -209,17 +197,4 @@ export class CustomModal implements CloseGuard, ModalComponent<CustomModalContex
   filterBtn() {
     return (this.filter ? 'Hide Filter' : 'Show Filter');
   }
-   // open(size: string) {
-   //    this.size = size;
-   //    this.opened = !this.opened;
-   //  }
-
-   //  cancel() {
-   //    this.opened = false;
-   //  }
-   submitComments() {
-     // $('#myModal').modal('hide');
-   //  hideModal: boolean = false;
-
-}
 }

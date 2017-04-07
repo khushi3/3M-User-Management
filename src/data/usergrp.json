@@ -184,5 +184,12 @@
       "userGroupName": "Falcons",
       "id": 22
     }
-  ]
+  ],
+  "stations": [
+    { "key": 1, "station": "Antonito","state": "CO" },
+    { "key": 2, "station": "Big Horn", "state": "NM" },
+    { "key": 3, "station": "Sublette", "state": "NM" },
+    { "key": 4, "station": "Toltec", "state": "NM" },
+    { "key": 5, "station": "Osier", "state": "CO" }
+   ]
 }
