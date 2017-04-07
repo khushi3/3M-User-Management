@@ -1,26 +1,7 @@
 <div class="page-top clearfix" baScrollPosition maxHeight="50" (scrollChange)="scrolledChanged($event)"
      [ngClass]="{scrolled: isScrolled}">
-  <a routerLink="/pages/dashboard" class="al-logo clearfix">
+  <a routerLink="/pages/user-management" class="al-logo clearfix">
   <img src="app/img/3m_healthcare_7.jpg" class="img-circle" alt="User Image"  style="width:30px; height:30px; margin:10px 0px 10px 10px">&nbsp; Admin</a>
   <a href (click)="toggleMenu()" class="collapse-menu-link ion-navicon"></a>
-
-  
- <!--  <div class="user-profile clearfix">
-    <div class="dropdown al-user-profile">
-      <a class="profile-toggle-link dropdown-toggle" id="user-profile-dd" data-toggle="dropdown" aria-expanded="false">
-        <img src="{{ ( 'Nasta' | baProfilePicture ) }}">
-      </a>
-      <ul class="dropdown-menu top-dropdown-menu profile-dropdown" aria-labelledby="user-profile-dd">
-        <li class="dropdown-item"><i class="dropdown-arr"></i></li>
-        <li class="dropdown-item"><a href><i class="fa fa-user"></i>Profile</a></li>
-        <li class="dropdown-item"><a href><i class="fa fa-cog"></i>Settings</a></li>
-        <li class="dropdown-item"><a href class="signout"><i class="fa fa-power-off"></i>Sign out</a></li>
-      </ul>
-    </div>
-    <ba-msg-center></ba-msg-center>
-  </div> -->
-  <!-- <div class="pull-right">
-         <h1 style="margin:0px;margin-top:10px;color:#ff0000;margin-right: 50px;">No PHI</h1>
-    </div> -->
 </div>
 

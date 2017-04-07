@@ -14,29 +14,19 @@ export class CustomModalContext extends BSModalContext {
  */
 @Component({
   selector: 'modal-content',
-  styles: [`
-        .custom-modal-container {
-            padding: 15px;
-        }
-
-        .custom-modal-header {
-            background-color: #219161;
-            color: #fff;
-            -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
-            -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
-            box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
-            margin-top: -15px;
-            margin-bottom: 40px;
-        }
-    `],
-  //TODO: [ngClass] here on purpose, no real use, just to show how to workaround ng2 issue #4330.
-  // Remove when solved.
-  /* tslint:disable */ template: `
-  <div class="container-fluid">
+  styleUrls: ['./custom-modal.scss'],
+  template: `
+  <div class="container-fluid" style="height: 420px;">
 <p></p>
 <dual-list [sort]="keepSorted" [source]="source" [key]="key" [display]="display" [filter]="filter" [(destination)]="confirmed" height="265px"></dual-list>
-  <button class="slds-button slds-button--neutral" (click)="cancel()">Cancel</button>
-  <button class="slds-button slds-button--neutral slds-button--brand">Save</button>
+  <div class="modal-footer">
+  <button class="btn btn-primary" (click)="cancel()" style="float: left;">
+  <i class="fa fa-times" aria-hidden="true"> Cancel</i></button>
+
+  <button class="btn btn-primary" style="float: right;">
+          <span class="fa fa-save"></span> Save
+        </button>
+        </div>
 </div>`
 })
 export class CustomModal implements CloseGuard, ModalComponent<CustomModalContext> {

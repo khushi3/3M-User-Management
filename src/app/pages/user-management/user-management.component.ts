@@ -4,31 +4,22 @@ import { ViewContainerRef, ViewEncapsulation } from '@angular/core';
 import {Http, Response} from '@angular/http';
 import { Modal, BSModalContext } from 'angular2-modal/plugins/bootstrap';
 import { Overlay, overlayConfigFactory } from 'angular2-modal';
-import { CustomModal } from './custom-modal-sample';
+import { CustomModal } from './custom-modal';
 
 @Component({
-  selector: 'dashboard',
-  styleUrls: ['./dashboard.scss'],
-  templateUrl: './dashboard.html',
+  selector: 'user-management',
+  styleUrls: ['./user-management.scss'],
+  templateUrl: './user-management.html',
   providers: [Modal],
   entryComponents: [
     CustomModal
   ]
 })
-export class Dashboard {
+export class UserManagement {
 
 
   public userGroups = [];
   public userGroupName : string;
-
-   // roles = [
-   //     {id:0, name: "--Select--"},
-   //     {id: 1, name: "Create"},
-   //     {id: 2, name: "Update"},
-   //     {id: 3, name: "Edit"},
-   //     {id: 4, name: "Delete"}
-   //   ];
-
   public items = [];
   public item: string;
 

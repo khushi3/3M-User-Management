@@ -6,14 +6,12 @@ import { ModalModule } from 'angular2-modal';
 import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
 
 
-import { Dashboard } from './dashboard.component';
-import { routing }       from './dashboard.routing';
+import { UserManagement } from './user-management.component';
+import { routing }       from './user-management.routing';
 
-import { UsersMap } from './usersMap';
-import { UsersMapService } from './usersMap/usersMap.service';
 import { UserGroupService  } from './usergroup.service';
 import { DualListComponent } from './dual-list.component';
-import { CustomModal } from './custom-modal-sample';
+import { CustomModal } from './custom-modal';
 
 
 @NgModule({
@@ -26,14 +24,12 @@ import { CustomModal } from './custom-modal-sample';
     BootstrapModalModule
   ],
   declarations: [
-    UsersMap,
-    Dashboard,
+    UserManagement,
     DualListComponent,
     CustomModal
   ],
   providers: [
-    UsersMapService,
     UserGroupService
   ]
 })
-export class DashboardModule {}
+export class UserManagementModule {}

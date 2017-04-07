@@ -116,9 +116,11 @@
   <label>Roles</label>
   <select class="selectpicker">  <option *ngFor="let role of roles" [ngValue]="role">{{role.name}}</option></select>
 </div><br/> -->
+<ng-container *ngIf="!name.errors">
 <span defaultOverlayTarget></span>
 <button (click)="onClick()">Add Members</button><br/><br/>
 <a href="javascript:void(0)">Add Role</a>
+</ng-container>
   <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" >Cancel</button>&nbsp;
          <button type="submit" class="btn btn-primary" (click)= "addUserGroup()" [disabled]="!grpForm.form.valid">Create</button>
