@@ -12,6 +12,9 @@ import { routing }       from './user-management.routing';
 import { UserGroupService  } from './usergroup.service';
 import { DualListComponent } from './dual-list.component';
 import { CustomModal } from './custom-modal';
+import { DualListService  } from './dual-list.service';
+import { ModalService } from './modal.service';
+import { ModalComponent } from './_directives/index';
 
 
 @NgModule({
@@ -26,10 +29,13 @@ import { CustomModal } from './custom-modal';
   declarations: [
     UserManagement,
     DualListComponent,
+    ModalComponent,
     CustomModal
   ],
   providers: [
-    UserGroupService
+    UserGroupService,
+    DualListService,
+    ModalService
   ]
 })
 export class UserManagementModule {}

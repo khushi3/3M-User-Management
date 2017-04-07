@@ -1,7 +1,7 @@
 <div style="display:-webkit-box;display:flex;flex-direction:row;align-content:flex-start;">
-	<div style="display:block;"> Available Users
-</div>
 	<form style="width:50%;margin:0px;">
+	  <div  style="display:block; border: 1px solid;
+    margin-bottom: 8px; text-align: center;color: #000000;"> Available Users </div>
 		<div *ngIf="filter" class="filter">
 			<input class="form-control" name="filterSource" [(ngModel)]="available.picker" (ngModelChange)="onFilter(available)">
 		</div>
@@ -42,6 +42,8 @@
 </div>
 
 	<form style="width:50%;margin:0 0 0 10px;">
+	  <div  style="display:block; border: 1px solid;
+    margin-bottom: 8px; text-align: center; color: #000000;"> Selected Users </div>
 		<div *ngIf="filter" class="filter">
 			<input class="form-control" name="filterDestination" [(ngModel)]="confirmed.picker" (ngModelChange)="onFilter(confirmed)">
 		</div>
