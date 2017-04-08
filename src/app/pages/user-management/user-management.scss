@@ -24,14 +24,11 @@ height: 475px;
 thead {
 text-transform: uppercase;
 }
-.table > tbody > tr > td {
-    //background-color: black;
-    //border: 1px solid;
-    }
-    
-    .container {
-color: white !important;
+ 
+.container {
+    color: black !important;
 }
+
 .al-main {
  background-color: black !important;
  }
@@ -43,12 +40,7 @@ button.btn.btn-default {
     font-size: 9px;
     line-height:0;
 }
-.table > tbody > tr > td {
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
-    border-right: 1px solid lightslategray;
-    text-align: left;
-
-}
+ 
 .table > thead > tr > th {
  border-top: 1px solid rgba(255, 255, 255, 0.3);
     border-right: 1px solid lightslategray;
@@ -58,8 +50,16 @@ button.btn.btn-default {
     tbody {
     font-size: 12px;
     background-color: white;
-    color: black;
+    color: black !important;
 }
+
+.table-striped {
+tbody tr:nth-of-type(odd) {
+background-color: grey !important;
+width: 105%;
+}
+}
+
     
 
  button.btn.btn-default {
@@ -70,7 +70,6 @@ button.btn.btn-default {
 }
 input.form-control {
     color: #000 !important;
-
     border: 2px solid rgba(255, 255, 255, 0.6);
     border: 1px solid  gray;
     border-radius: 5px;
@@ -113,31 +112,16 @@ a {
 }
 
 .card-header, .card-footer {
-    color: #ffffff;
+    color: #000;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     height: 33px;
     font-size: 16px;
     padding: 9px 22px;
-    background-color: dimgrey;
+    background-color: #D3D3D3;
     }
  
 
-.pagination {
-    display: inline-block;
-    padding-left: 0;
-    margin-top:  0rem !important;
-    margin-bottom: -0.2rem !important;
-    border-radius: 0.25rem;
-    background-color: dimgray !important;
-}
-
-.pagination a {
-    color: black !important;
-    float: left;
-    padding: 8px 16px;
-    text-decoration: none;
-     border: 1px solid #ddd;
-}
+ 
  
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic);
 /*!

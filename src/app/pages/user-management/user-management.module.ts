@@ -15,6 +15,10 @@ import { CustomModal } from './custom-modal';
 import { ModalService } from './modal.service';
 import { ModalComponent } from './_directives/index';
 
+//import { Ng2TableModule } from 'ng2-table';
+ import { PaginationModule } from 'ng2-bootstrap';
+ import { Ng2SmartTableModule } from 'ng2-smart-table';
+
 
 @NgModule({
   imports: [
@@ -23,7 +27,9 @@ import { ModalComponent } from './_directives/index';
     NgaModule,
     routing,
     ModalModule.forRoot(),
-    BootstrapModalModule
+    BootstrapModalModule,
+     Ng2SmartTableModule
+    //PaginationModule.forRoot()
   ],
   declarations: [
     UserManagement,

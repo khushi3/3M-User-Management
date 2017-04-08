@@ -28,8 +28,16 @@
           "userName": "A1236ZZ",
           "firstName": "Kavi",
           "lastName": "Priya"
+        },
+        {
+          "active": false,
+          "userId": 4,
+          "userName": "A1236ZZ",
+          "firstName": "Kavi",
+          "lastName": "Priya"
         }
-      ]
+      ],
+      "dateCreated" :  "2017-04-03T14:28:48.265Z"
     },
     {
       "active": true,
@@ -59,8 +67,16 @@
           "userName": "A1236ZZ",
           "firstName": "Ravi Kiran",
           "lastName": "R G"
+        },
+        {
+          "active": false,
+          "userId": 4,
+          "userName": "A1236ZZ",
+          "firstName": "Kavi",
+          "lastName": "Priya"
         }
-      ]
+      ],
+      "dateCreated" :  "2017-04-03T14:28:48.265Z"
     },
     {
       "active": true,
@@ -91,7 +107,8 @@
           "firstName": "Saurah",
           "lastName": "S"
         }
-      ]
+      ],
+      "dateCreated" :  "2017-04-04T14:28:48.265Z"
     },
     {
       "active": false,
@@ -107,7 +124,16 @@
           "permissions": null
         }
       ],
-      "users": null
+      "users": [
+        {
+          "active": false,
+          "userId": 3,
+          "userName": "A1235ZZ",
+          "firstName": "Ramu",
+          "lastName": "V"
+        } 
+      ],
+      "dateCreated" :  "2017-04-04T14:28:48.265Z"
     },
     {
       "active": false,
@@ -123,7 +149,30 @@
           "permissions": null
         }
       ],
-      "users": null
+     "users": [
+        {
+          "active": false,
+          "userId": 3,
+          "userName": "A1235ZZ",
+          "firstName": "Ramu",
+          "lastName": "V"
+        },
+        {
+          "active": false,
+          "userId": 4,
+          "userName": "A1236ZZ",
+          "firstName": "Kavi",
+          "lastName": "Priya"
+        },
+        {
+          "active": false,
+          "userId": 4,
+          "userName": "A1236ZZ",
+          "firstName": "Kavi",
+          "lastName": "Priya"
+        }
+      ],
+      "dateCreated" :  "2017-04-04T14:28:48.265Z"
     },
     {
       "active": false,
@@ -139,7 +188,23 @@
           "permissions": null
         }
       ],
-      "users": null
+     "users": [
+        {
+          "active": false,
+          "userId": 3,
+          "userName": "A1235ZZ",
+          "firstName": "Ramu",
+          "lastName": "V"
+        },
+        {
+          "active": false,
+          "userId": 4,
+          "userName": "A1236ZZ",
+          "firstName": "Kavi",
+          "lastName": "Priya"
+        }
+      ],
+      "dateCreated" :  "2017-04-04T14:28:48.265Z"
     },
     {
       "userGroupName": "test",
@@ -152,7 +217,24 @@
           "roleDesc": "Super Admin",
           "permissions": null
         }
-      ]
+      ],
+      "users": [
+        {
+          "active": false,
+          "userId": 3,
+          "userName": "A1235ZZ",
+          "firstName": "Ramu",
+          "lastName": "V"
+        },
+        {
+          "active": false,
+          "userId": 4,
+          "userName": "A1236ZZ",
+          "firstName": "Kavi",
+          "lastName": "Priya"
+        }
+      ],
+      "dateCreated" :  "2017-04-04T14:28:48.265Z"
     },
     {
       "userGroupName": "TestGroup",
@@ -165,7 +247,31 @@
           "roleDesc": "Super Admin",
           "permissions": null
         }
-      ]
+      ],
+      "users": [
+        {
+          "active": false,
+          "userId": 3,
+          "userName": "A1235ZZ",
+          "firstName": "Ramu",
+          "lastName": "V"
+        },
+        {
+          "active": false,
+          "userId": 4,
+          "userName": "A1236ZZ",
+          "firstName": "Kavi",
+          "lastName": "Priya"
+        },
+        {
+          "active": false,
+          "userId": 4,
+          "userName": "A1236ZZ",
+          "firstName": "Kavi",
+          "lastName": "Priya"
+        }
+      ],
+      "dateCreated" :  "2017-04-05T14:28:48.265Z"
     },
     {
       "userGroupName": "testGrpTwo",
@@ -178,11 +284,60 @@
           "roleDesc": "Super Admin",
           "permissions": null
         }
+      ],"users": [
+        {
+          "active": false,
+          "userId": 3,
+          "userName": "A1235ZZ",
+          "firstName": "Ramu",
+          "lastName": "V"
+        },
+        {
+          "active": false,
+          "userId": 4,
+          "userName": "A1236ZZ",
+          "firstName": "Kavi",
+          "lastName": "Priya"
+        }
       ]
     },
     {
       "userGroupName": "Falcons",
-       "id": 22
+       "id": 22,
+        "roles": [
+        {
+          "active": false,
+          "roleId": 3,
+          "roleName": "Super Admin",
+          "roleDesc": "Super Admin",
+          "permissions": null
+        },
+        {
+          "active": false,
+          "roleId": 4,
+          "roleName": "Approver",
+          "roleDesc": "Approves concepts",
+          "permissions": null
+        }
+      ],
+        "users": [
+        {
+          "active": false,
+          "userId": 3,
+          "userName": "A1235ZZ",
+          "firstName": "Ramu",
+          "lastName": "V"
+        },
+        {
+          "active": false,
+          "userId": 4,
+          "userName": "A1236ZZ",
+          "firstName": "Kavi",
+          "lastName": "Priya"
+        }
+      ],
+      "dateCreated" :  "2017-04-05T14:28:48.265Z"
+
     },
     
     {
@@ -219,7 +374,8 @@
           "permissions": null
         }
       ],
-      "id": 27
+      "id": 27,
+      "dateCreated" :  "2017-04-06T14:28:48.265Z"
     },
     {
       "userGroupName": "group6",
@@ -255,7 +411,8 @@
           "permissions": null
         }
       ],
-      "id": 28
+      "id": 28,
+      "dateCreated" :  "2017-04-07T14:28:48.265Z"
     }
   ],
   "users": [
