@@ -385,5 +385,26 @@
       "permissionDesc": "Release a Branch"
  
     }
-  ]
+  ],
+  "users": [
+    { "key": 1, "userName": "A1237ZZ","firstName": "Sandeep","lastName": "N"},
+    { "key": 2,"userName": "A1238ZZ", "firstName": "Saurabh",  "lastName": "S"},
+    { "key": 3, "userName": "A1236ZZ", "firstName": "Ravi Kiran","lastName": "R G"},
+    { "key": 4, "userName": "A1245ZZ", "firstName": "Ramu","lastName":"V" },
+    { "key": 5, "userName": "A6274ZZ", "firstName": "Khushboo","lastName": "Bh"},
+    { "key": 6, "userName": "A6284ZZ", "firstName": "Kavi","lastName": "Priya"},
+    { "key": 7, "userName": "A6294ZZ", "firstName": "parthiban","lastName": "M"},
+    { "key": 8, "userName": "A6274ZZ", "firstName": "Donald","lastName": "T"},
+    { "key": 9, "userName": "A6224ZZ", "firstName": "Mac","lastName": "K"},
+    { "key": 10, "userName": "A6234ZZ", "firstName": "Solt","lastName": "A"},
+    { "key": 11, "userName": "A6264ZZ", "firstName": "Ques","lastName": "W"},
+    { "key": 12, "userName": "A6244ZZ", "firstName": "June","lastName": "S"},
+    { "key": 13, "userName": "A6254ZZ", "firstName": "Tews","lastName": "B"},
+    { "key": 14, "userName": "A6274ZZ", "firstName": "Ukay","lastName": "Z"},
+    { "key": 15, "userName": "A6284ZZ", "firstName": "pinto","lastName": "A"},
+    { "key": 16, "userName": "A6234ZZ", "firstName": "sooc","lastName": "Q"},
+    { "key": 17, "userName": "A1224ZZ", "firstName": "sonn","lastName": "X"},
+    { "key": 18, "userName": "A974ZZ", "firstName":  "weet","lastName": "W"}
+   ]
 }
+
