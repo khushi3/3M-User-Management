@@ -19,20 +19,20 @@
 
 		<div style="margin-top:8px;">
 			<button type="button" class="btn btn-primary"
-				style="width:47%;float:left;" (click)="selectAll(available)"
+				style="width:18%;float:left;" (click)="selectAll(available)"
 				[disabled]="isAllSelected(available)">
 				<i class="fa fa-fast-forward" aria-hidden="true"></i>
 				</button>
 			<button type="button" class="btn btn-default"
-				style="width:47%;float:right;margin-right:0px; color: black;" (click)="selectNone(available)"
-				[disabled]="!isAnySelected(available)">None</button>
+				style="float:right;margin-right:0px; color: #000000; border: 1px solid;" (click)="selectNone(available)"
+				[disabled]="!isAnySelected(available)"><i class="fa fa-square-o"></i> Uncheck</button>
 		</div>
 	</form>
 	<div style="padding: 5px;">
 <button type="button" name="addBtn" class="btn btn-primary"
-			style="display:block;margin-bottom:8px;margin-top: 116px;height: 10%;"
+			style="display:block;margin-bottom:8px;margin-top: 116px;height: 10%;width: 77%;"
 			(click)="moveItem(available, confirmed)"
-			[disabled]="available.pick.length === 0"><i class="fa fa-arrow-right" aria-hidden="true"></i>
+			[disabled]="available.pick.length === 0"><i class="fa fa-arrow-right" aria-hidden="true">&nbsp;&nbsp;&nbsp;&nbsp;</i>
 </button>
 <button type="button" name="removeBtn" class="btn btn-primary"
 			style="display:block;margin-bottom:8px; height: 10%;"
@@ -41,7 +41,7 @@
 </button>
 </div>
 
-	<form style="width:50%;margin:0 0 0 10px;">
+	<form style="width:50%;">
 	  <div  style="display:block; border: 1px solid;
     margin-bottom: 8px; text-align: center; color: #000000;"> Selected Users </div>
 		<div *ngIf="filter" class="filter">
@@ -60,11 +60,11 @@
 		</div>
 		<div style="margin-top:8px;">
 			<button type="button" class="btn btn-primary"
-				style="width:47%;float:left;" (click)="selectAll(confirmed)"
+				style="width:18%;float:left;" (click)="selectAll(confirmed)"
 				[disabled]="isAllSelected(confirmed)"><i class="fa fa-fast-backward" aria-hidden="true"></i></button>
 			<button type="button" class="btn btn-default"
-				style="width:47%;float:right;margin-right:0px; color: black;" (click)="selectNone(confirmed)"
-				[disabled]="!isAnySelected(confirmed)">None</button>
+				style="float:right;margin-right: 24px; color: #000000;border: 1px solid;" (click)="selectNone(confirmed)"
+				[disabled]="!isAnySelected(confirmed)"><i class="fa fa-square-o"></i> Uncheck</button>
 		</div>
 	</form>
 </div>
