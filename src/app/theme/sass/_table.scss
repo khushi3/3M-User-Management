@@ -5,8 +5,9 @@
       & > th {
         border-bottom: 1px solid $border-light;
         white-space: nowrap;
+
         &:first-child {
-          text-align: center;
+          text-align: left;
         }
         &:last-child {
           padding-right: 16px;
@@ -21,10 +22,10 @@
       }
       & > td {
         padding: 0px 8px;
-        line-height: 35px;
+        line-height: 20px !important;
         border-top: 1px solid $border-light;
         &:first-child {
-          text-align: center;
+          text-align: left;
         }
         &:last-child {
           padding-right: 16px !important;
@@ -52,7 +53,7 @@
 }
 
 .editable-wrap .btn-group.form-control {
-  background-color: transparent;
+  background-color: gray;
 }
 
 .editable-tr-wrap {
@@ -155,6 +156,7 @@ input.search-input {
 
 .table .pagination {
   margin: 4px 0 -12px 0;
+  background-color: grey;
   a {
     cursor: pointer;
   }
@@ -165,7 +167,7 @@ input.search-input {
 }
 
 .pagination > li > a, .pagination > li > span {
-  background: transparent;
+  background: grey;
 }
 
 .pagination > li:first-child > a, .pagination > li:first-child > span {
@@ -226,7 +228,7 @@ input.search-input {
 
 .table-hover {
   > tbody > tr:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color:dimgrey !important;
   }
 }
 
@@ -237,16 +239,16 @@ input.search-input {
 .table-bordered > thead > tr > td,
 .table-bordered > tbody > tr > td,
 .table-bordered > tfoot > tr > td{
-  border: 1px solid $border-light;
+   border: 1px solid lightgrey;;
 }
 
 .table-striped > tbody > tr:nth-of-type(odd) {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: #eeeeee;
 }
 
 @mixin color-row($color) {
   background-color: rgba($color, 0.7);
-  color: $label-text;
+  color: black;
   border: none;
   a.email-link {
     color: $label-text;
@@ -272,29 +274,38 @@ input.search-input {
 }
 
 .editable-click, a.editable-click {
-  color: $default-text;
+  color: black;
   border-bottom: dashed 1px $border;
 }
 
 th {
   font-weight: $font-normal;
-}
 
+}
+.table > thead > tr > th {
+    border-bottom: none;
+    background-color: #373a3c;
+    color: #eceeef;
+    text-align: center !important;
+    font-weight: bold;
+
+}
 .editable-empty {
   color: $danger-dark;
 }
 
 .table > tbody > tr > th {
-  border: none;
+  border: solid 1px black;
 }
 
 .table-striped > tbody > tr > td {
-  border: none;
+ border: 1px solid lightgrey;
 }
 .pagination > li > a,
 .pagination > li > span{
   color: $default-text;
-  border-color: $border;
+  border-color: #C0C0C0;
+
 }
 
 
@@ -316,7 +327,7 @@ th {
 .pagination > .active > span:hover,
 .pagination > .active > a:focus,
 .pagination > .active > span:focus {
-  background-color: rgba(0,0,0,.3)!important;
+  background-color: #696969!important;
   border-color: $border!important;
 }
 
@@ -324,12 +335,12 @@ th {
 .pagination > li > span:hover,
 .pagination > li > a:focus,
 .pagination > li > span:focus{
-  background-color: rgba(0,0,0,.2);
+  background-color: #C0C0C0;
   color: $default-text;
 }
 
 .page-item.disabled .page-link, .page-item.disabled .page-link:focus, .page-item.disabled .page-link:hover {
-  background-color: rgba(255,255,255,.1);
+  background-color: #C0C0C0;
   color: $default-text;
 }
 
@@ -339,4 +350,62 @@ th {
 
 .table-responsive {
   margin-top: 10px;
+}
+label {
+    display: inline-block;
+     
+    font-size: 15px !important;
+    margin-top: 2px !important;
+    margin-left: 55px !important;
+}
+
+.form-control {
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+    background-color: dimgrey !important;
+    box-shadow: none;
+    margin: 8px;
+    font-size: 10px;
+}
+
+tbody {
+tr:hover {  
+background: rgba(0, 0, 0, 0.10);
+}
+}
+
+a.ng2-smart-sort-link {
+font-size: 12px !important;
+color: #eceeef;
+font-weight: bold;
+&.sort {
+font-weight: bold;
+
+&::after {
+border-bottom-color: #000 !important;
+}
+}
+}
+a.ng2-smart-action ng2-smart-action-delete-delete{
+  text-align: center;
+}
+
+table.ng2-smart-table td{
+    font-size: 12px !important;
+    margin: 0;
+    padding: 0.5rem 1rem;
+   
+    border: 1px solid #e9ebec;
+}
+
+.ng2-smart-filter input {
+    width: 100%;
+    line-height: 20px !important;
+    font-weight: normal;
+    font-size: 12px;
+   
+}
+.ng2-smart-title{
+  font-size: 12px;
 }
