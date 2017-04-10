@@ -411,28 +411,6 @@
       ],
       "dateCreated": "2017-04-10T11:39:34.171Z",
       "id": 30
-    },
-    {
-      "userGroupName": "Test4",
-      "roles": [],
-      "users": [
-        {
-          "active": false,
-          "userId": 7,
-          "userName": "A1338ZZ",
-          "firstName": "Donald",
-          "lastName": "S"
-        },
-        {
-          "active": false,
-          "userId": 8,
-          "userName": "A1228ZZ",
-          "firstName": "Dpor",
-          "lastName": "S"
-        }
-      ],
-      "dateCreated": "2017-04-10T11:46:25.423Z",
-      "id": 32
     }
   ],
   "users": [
