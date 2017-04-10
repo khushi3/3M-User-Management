@@ -3,6 +3,9 @@ import { Component } from '@angular/core';
 import { DialogRef, ModalComponent, CloseGuard } from 'angular2-modal';
 import { BSModalContext } from 'angular2-modal/plugins/bootstrap/index';
 import { UserGroupService  } from './usergroup.service';
+import {UserGroup} from './userGroup';
+import {Http, Response} from '@angular/http';
+
 export class CustomModalContext extends BSModalContext {
   public num1: number;
   public num2: number;
@@ -22,10 +25,12 @@ export class CustomModalContext extends BSModalContext {
 })
 export class CustomModal implements CloseGuard, ModalComponent<CustomModalContext> {
   context: CustomModalContext;
+   usergroup: UserGroup;
 
   public wrongAnswer: boolean;
   public shouldUseMyClass: boolean;
   private sourceStations:Array<any>;
+  private modalOpen: boolean;
   constructor(private userGroupService: UserGroupService, public dialog: DialogRef<CustomModalContext>) {
     this.context = dialog.context;
     this.wrongAnswer = true;
@@ -36,6 +41,23 @@ export class CustomModal implements CloseGuard, ModalComponent<CustomModalContex
     }, error => console.log('Could not load userGroups '));
   }
 
+public  saveUsers() {  
+    if (this.confirmed && this.confirmed.length) {
+      //this.userGroupName = userGrpName;
+     // console.log( "func "+this.usergroup.users);
+      this.userGroupService.saveUsers(this.confirmed)
+      .subscribe((r:Response)=>{
+        console.log(r);
+      });
+      console.log("users saved successfully!!");
+       this.dialog.close();
+      //window.location.reload();
+    }
+  }
+  closeModal() {
+    this.modalOpen = false;
+    this.dialog.close();
+  }
   onKeyUp(value) {
     this.wrongAnswer = value != 5;
     this.dialog.close();
@@ -47,13 +69,11 @@ export class CustomModal implements CloseGuard, ModalComponent<CustomModalContex
   }
 
   beforeClose(): boolean {
-    return this.wrongAnswer;
+    return this.modalOpen;
   }
 
   private tab:number = 1;
-
   private keepSorted:boolean = true;
-
   private key:string;
   private display:string;
   private filter:boolean = false;
@@ -62,12 +82,9 @@ export class CustomModal implements CloseGuard, ModalComponent<CustomModalContex
 
 
   private sourceChessmen:Array<any>;
-
   private confirmedStations:Array<any>;
   private confirmedChessmen:Array<any>;
-
   private toggle:boolean = true;
-
   private userAdd:string = '';
   private chessmen:Array<any> = [
     { _id: 1, name: "Pawn" },
@@ -80,7 +97,7 @@ export class CustomModal implements CloseGuard, ModalComponent<CustomModalContex
 
   private useStations() {
     this.toggle = true;
-    this.key = 'key';
+    this.key = 'userId';
     this.display = 'firstName';
     this.keepSorted = true;
     this.source = this.sourceStations;;
@@ -156,4 +173,5 @@ export class CustomModal implements CloseGuard, ModalComponent<CustomModalContex
   filterBtn() {
     return (this.filter ? 'Hide Filter' : 'Show Filter');
   }
+
 }
