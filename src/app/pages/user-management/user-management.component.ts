@@ -29,7 +29,7 @@ import * as globalConfig from './../../global.config';
 export class UserManagement {
 
   settings = {
-
+    selectMode: 'multi',
     hideHeader: false,
     doEmit: true,
     silent: true,
@@ -90,7 +90,7 @@ export class UserManagement {
 
   public filteredcount;
 
-  public newUserGroup: UserGroup = new UserGroup(); 
+  public newUserGroup: UserGroup = new UserGroup();
  
   public userGroups: Array<any>= [];
 
@@ -159,6 +159,7 @@ export class UserManagement {
       console.log("user group saved successfully!!");
 
       window.location.reload();
+      // this.newUserGroup.userGroupName= '';
     }
   }
 
@@ -168,12 +169,22 @@ export class UserManagement {
   }
 
   onDeleteConfirm(event): void {
+    console.log(event.data.id);
     if (window.confirm('Are you sure you want to delete?')) {
-       
-      event.confirm.resolve();
+      this.userGroupService.deleteUserGroup(event.data.id).subscribe((r:Response)=>{
+                  console.log(r);
+                  if(r.status == 200)      
+                  event.confirm.resolve();
+                });
+            console.log(event.data.id + "User Group Deleted successfully!!");
+      
     } else {
       event.confirm.reject();
     }
+  }
+
+  onCancel(){
+     this.newUserGroup.userGroupName= '';
   }
 
   

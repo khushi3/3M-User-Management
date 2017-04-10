@@ -207,36 +207,6 @@
       "dateCreated": "2017-04-04T14:28:48.479Z"
     },
     {
-      "userGroupName": "test",
-      "id": 19,
-      "roles": [
-        {
-          "active": false,
-          "roleId": 3,
-          "roleName": "Super Admin",
-          "roleDesc": "Super Admin",
-          "permissions": null
-        }
-      ],
-      "users": [
-        {
-          "active": false,
-          "userId": 3,
-          "userName": "A1235ZZ",
-          "firstName": "Ramu",
-          "lastName": "V"
-        },
-        {
-          "active": false,
-          "userId": 4,
-          "userName": "A1236ZZ",
-          "firstName": "Kavi",
-          "lastName": "Priya"
-        }
-      ],
-      "dateCreated": "2017-04-04T14:28:48.479Z"
-    },
-    {
       "userGroupName": "TestGroup",
       "id": 20,
       "roles": [
@@ -413,13 +383,6 @@
       ],
       "id": 28,
       "dateCreated": "2017-04-07T14:28:48.479Z"
-    },
-    {
-      "userGroupName": "khushi",
-      "roles": [],
-      "users": [],
-      "dateCreated": "2017-04-08T14:04:21.479Z",
-      "id": 29
     }
   ],
   "users": [
