@@ -87,14 +87,12 @@ export class UserManagement {
   };
 
   source: LocalDataSource;
-
-  public filteredcount;
-
-  public newUserGroup: UserGroup = new UserGroup();
- 
-  public userGroups: Array<any>= [];
-
-  public lastActions : Array<string> = [ 
+public newUsers:Array<any>=[];
+public userGroupName : string;
+public filteredcount;
+public newUserGroup: UserGroup = new UserGroup(); 
+public userGroups: Array<any>= [];
+public lastActions : Array<string> = [ 
   'Created Region',
   'Edited Region',
   'Created Concept',
@@ -150,9 +148,10 @@ export class UserManagement {
   }
 
   public addUserGroup() {  
-    if (this.newUserGroup.userGroupName) {
-      this.userGroupService.addUserGroup(this.newUserGroup.userGroupName,
-        this.newUserGroup.users,this.newUserGroup.roles)
+   if (this.userGroupName) {
+      //this.userGroupName = userGrpName;
+      console.log(this.newUsers);
+      this.userGroupService.addUserGroup(this.userGroupName,this.newUsers,[])
       .subscribe((r:Response)=>{
         console.log(r);
       });
@@ -165,7 +164,15 @@ export class UserManagement {
 
 
   onClick() {
-    this.modal.open(CustomModal, overlayConfigFactory({ num1: 2, num2: 3 }, BSModalContext));
+    var modalWindow = this.modal.open(CustomModal, overlayConfigFactory({ num1: 2, num2: 3 }, BSModalContext));
+     modalWindow.then((resultPromise) => {
+            resultPromise.result.then((result) => {
+                this.newUsers = result || [];
+            }, () => {
+              console.log('Rejected!');
+            });
+        });
+     console.log( "inside add" + this.newUsers);
   }
 
   onDeleteConfirm(event): void {

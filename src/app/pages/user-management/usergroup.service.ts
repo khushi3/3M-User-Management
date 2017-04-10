@@ -29,8 +29,14 @@ public getStations(): Observable<any> {
 }
 
 
-public addUserGroup(userGroupName, roles, users): Observable<any> {
-	var currDate = new Date().toJSON();
+public addUserGroup(userGroupName, users, roles): Observable<any> {
+		var currDate = new Date().toJSON();
+		var userGroup = {
+			"userGroupName" : userGroupName,
+			"users" : users,
+			"roles" : roles,
+			"dateCreated" : currDate
+		}
 
 	var userGroup = {
 		"userGroupName" : userGroupName,
@@ -38,9 +44,18 @@ public addUserGroup(userGroupName, roles, users): Observable<any> {
 		"users" : users,
 		"dateCreated" : currDate
 	}
+		return this.http.post(globalConfig.server_url + globalConfig.usergroup_api_url ,JSON.stringify(userGroup), { headers: this.headers })
+						.map(response=> response.json());
+		}
 
-	return this.http.post(globalConfig.server_url + globalConfig.usergroup_api_url ,JSON.stringify(userGroup), { headers: this.headers })
-	.map(response=> response.json());
+
+public saveUsers(users): Observable<any> {
+	console.log("inside service")
+		var userGroup = {
+		"users" : users
+		}
+return this.http.post(globalConfig.server_url + globalConfig.usergroup_api_url ,JSON.stringify(userGroup), { headers: this.headers })
+.map(response=> response.json());
 }
 
 public deleteUserGroup(id){
@@ -52,4 +67,5 @@ public deleteUserGroup(id){
 }
 
 }
+
 

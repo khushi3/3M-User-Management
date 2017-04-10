@@ -383,6 +383,56 @@
       ],
       "id": 28,
       "dateCreated": "2017-04-07T14:28:48.479Z"
+    },
+    {
+      "userGroupName": "testq",
+      "roles": [],
+      "users": [
+        {
+          "active": false,
+          "userId": 9,
+          "userName": "A12148ZZ",
+          "firstName": "June",
+          "lastName": "T"
+        }
+      ],
+      "dateCreated": "2017-04-10T11:36:42.973Z",
+      "id": 29
+    },
+    {
+      "userGroupName": "test2",
+      "roles": [],
+      "users": [
+        {
+          "key": 32,
+          "station": "Eureka",
+          "state": "CO"
+        }
+      ],
+      "dateCreated": "2017-04-10T11:39:34.171Z",
+      "id": 30
+    },
+    {
+      "userGroupName": "Test4",
+      "roles": [],
+      "users": [
+        {
+          "active": false,
+          "userId": 7,
+          "userName": "A1338ZZ",
+          "firstName": "Donald",
+          "lastName": "S"
+        },
+        {
+          "active": false,
+          "userId": 8,
+          "userName": "A1228ZZ",
+          "firstName": "Dpor",
+          "lastName": "S"
+        }
+      ],
+      "dateCreated": "2017-04-10T11:46:25.423Z",
+      "id": 32
     }
   ],
   "users": [
