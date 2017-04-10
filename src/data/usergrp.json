@@ -2,7 +2,7 @@
   "usergrp": [
     {
       "active": false,
-      "userGroupId": 1,
+      "id": 1,
       "userGroupName": "SME Group",
       "userGroupDesc": "SME Groups ",
       "roles": [
@@ -37,11 +37,11 @@
           "lastName": "Priya"
         }
       ],
-      "dateCreated" :  "2017-04-03T14:28:48.265Z"
+      "dateCreated": "2017-04-03T14:28:48.479Z"
     },
     {
       "active": true,
-      "userGroupId": 2,
+      "id": 2,
       "userGroupName": "Admin Group",
       "userGroupDesc": "Administrators",
       "roles": [
@@ -76,11 +76,11 @@
           "lastName": "Priya"
         }
       ],
-      "dateCreated" :  "2017-04-03T14:28:48.265Z"
+      "dateCreated": "2017-04-03T14:28:48.479Z"
     },
     {
       "active": true,
-      "userGroupId": 3,
+      "id": 3,
       "userGroupName": "Super Admin Group",
       "userGroupDesc": "Super Administrators",
       "roles": [
@@ -108,11 +108,11 @@
           "lastName": "S"
         }
       ],
-      "dateCreated" :  "2017-04-04T14:28:48.265Z"
+      "dateCreated": "2017-04-04T14:28:48.479Z"
     },
     {
       "active": false,
-      "userGroupId": 4,
+      "id": 4,
       "userGroupName": "Test Group 1",
       "userGroupDesc": "Test user group 1",
       "roles": [
@@ -131,13 +131,13 @@
           "userName": "A1235ZZ",
           "firstName": "Ramu",
           "lastName": "V"
-        } 
+        }
       ],
-      "dateCreated" :  "2017-04-04T14:28:48.265Z"
+      "dateCreated": "2017-04-04T14:28:48.479Z"
     },
     {
       "active": false,
-      "userGroupId": 5,
+      "id": 5,
       "userGroupName": "Test Group 2",
       "userGroupDesc": "Test user group 2",
       "roles": [
@@ -149,7 +149,7 @@
           "permissions": null
         }
       ],
-     "users": [
+      "users": [
         {
           "active": false,
           "userId": 3,
@@ -172,11 +172,11 @@
           "lastName": "Priya"
         }
       ],
-      "dateCreated" :  "2017-04-04T14:28:48.265Z"
+      "dateCreated": "2017-04-04T14:28:48.479Z"
     },
     {
       "active": false,
-      "userGroupId": 6,
+      "id": 6,
       "userGroupName": "Test Group 3",
       "userGroupDesc": "Test user group 3",
       "roles": [
@@ -188,7 +188,7 @@
           "permissions": null
         }
       ],
-     "users": [
+      "users": [
         {
           "active": false,
           "userId": 3,
@@ -204,7 +204,7 @@
           "lastName": "Priya"
         }
       ],
-      "dateCreated" :  "2017-04-04T14:28:48.265Z"
+      "dateCreated": "2017-04-04T14:28:48.479Z"
     },
     {
       "userGroupName": "test",
@@ -234,7 +234,7 @@
           "lastName": "Priya"
         }
       ],
-      "dateCreated" :  "2017-04-04T14:28:48.265Z"
+      "dateCreated": "2017-04-04T14:28:48.479Z"
     },
     {
       "userGroupName": "TestGroup",
@@ -271,7 +271,7 @@
           "lastName": "Priya"
         }
       ],
-      "dateCreated" :  "2017-04-05T14:28:48.265Z"
+      "dateCreated": "2017-04-05T14:28:48.479Z"
     },
     {
       "userGroupName": "testGrpTwo",
@@ -284,7 +284,8 @@
           "roleDesc": "Super Admin",
           "permissions": null
         }
-      ],"users": [
+      ],
+      "users": [
         {
           "active": false,
           "userId": 3,
@@ -299,12 +300,13 @@
           "firstName": "Kavi",
           "lastName": "Priya"
         }
-      ]
+      ],
+      "dateCreated": "2017-04-05T14:28:48.479Z"
     },
     {
       "userGroupName": "Falcons",
-       "id": 22,
-        "roles": [
+      "id": 22,
+      "roles": [
         {
           "active": false,
           "roleId": 3,
@@ -320,7 +322,7 @@
           "permissions": null
         }
       ],
-        "users": [
+      "users": [
         {
           "active": false,
           "userId": 3,
@@ -336,10 +338,8 @@
           "lastName": "Priya"
         }
       ],
-      "dateCreated" :  "2017-04-05T14:28:48.265Z"
-
+      "dateCreated": "2017-04-05T14:28:48.479Z"
     },
-    
     {
       "userGroupName": "group5",
       "users": [
@@ -375,7 +375,7 @@
         }
       ],
       "id": 27,
-      "dateCreated" :  "2017-04-06T14:28:48.265Z"
+      "dateCreated": "2017-04-06T14:28:48.479Z"
     },
     {
       "userGroupName": "group6",
@@ -412,7 +412,14 @@
         }
       ],
       "id": 28,
-      "dateCreated" :  "2017-04-07T14:28:48.265Z"
+      "dateCreated": "2017-04-07T14:28:48.479Z"
+    },
+    {
+      "userGroupName": "khushi",
+      "roles": [],
+      "users": [],
+      "dateCreated": "2017-04-08T14:04:21.479Z",
+      "id": 29
     }
   ],
   "users": [
@@ -455,7 +462,56 @@
       "active": false,
       "userId": 6,
       "userName": "A1238ZZ",
-      "firstName": "Saurah",
+      "firstName": "Saurabh",
+      "lastName": "S"
+    },
+    {
+      "active": false,
+      "userId": 7,
+      "userName": "A1338ZZ",
+      "firstName": "Donald",
+      "lastName": "S"
+    },
+    {
+      "active": false,
+      "userId": 8,
+      "userName": "A1228ZZ",
+      "firstName": "Dpor",
+      "lastName": "S"
+    },
+    {
+      "active": false,
+      "userId": 9,
+      "userName": "A12148ZZ",
+      "firstName": "June",
+      "lastName": "T"
+    },
+    {
+      "active": false,
+      "userId": 10,
+      "userName": "A1237ZZ",
+      "firstName": "Qwert",
+      "lastName": "S"
+    },
+    {
+      "active": false,
+      "userId": 11,
+      "userName": "A0232ZZ",
+      "firstName": "Xertq",
+      "lastName": "S"
+    },
+    {
+      "active": false,
+      "userId": 12,
+      "userName": "A1038ZZ",
+      "firstName": "Zqwe",
+      "lastName": "S"
+    },
+    {
+      "active": false,
+      "userId": 13,
+      "userName": "A1233ZZ",
+      "firstName": "pool",
       "lastName": "S"
     }
   ],
@@ -540,28 +596,6 @@
       "permissionId": 4,
       "permissionName": "Release Branch",
       "permissionDesc": "Release a Branch"
- 
     }
-  ],
-  "users": [
-    { "key": 1, "userName": "A1237ZZ","firstName": "Sandeep","lastName": "N"},
-    { "key": 2,"userName": "A1238ZZ", "firstName": "Saurabh",  "lastName": "S"},
-    { "key": 3, "userName": "A1236ZZ", "firstName": "Ravi Kiran","lastName": "R G"},
-    { "key": 4, "userName": "A1245ZZ", "firstName": "Ramu","lastName":"V" },
-    { "key": 5, "userName": "A6274ZZ", "firstName": "Khushboo","lastName": "Bh"},
-    { "key": 6, "userName": "A6284ZZ", "firstName": "Kavi","lastName": "Priya"},
-    { "key": 7, "userName": "A6294ZZ", "firstName": "parthiban","lastName": "M"},
-    { "key": 8, "userName": "A6274ZZ", "firstName": "Donald","lastName": "T"},
-    { "key": 9, "userName": "A6224ZZ", "firstName": "Mac","lastName": "K"},
-    { "key": 10, "userName": "A6234ZZ", "firstName": "Solt","lastName": "A"},
-    { "key": 11, "userName": "A6264ZZ", "firstName": "Ques","lastName": "W"},
-    { "key": 12, "userName": "A6244ZZ", "firstName": "June","lastName": "S"},
-    { "key": 13, "userName": "A6254ZZ", "firstName": "Tews","lastName": "B"},
-    { "key": 14, "userName": "A6274ZZ", "firstName": "Ukay","lastName": "Z"},
-    { "key": 15, "userName": "A6284ZZ", "firstName": "pinto","lastName": "A"},
-    { "key": 16, "userName": "A6234ZZ", "firstName": "sooc","lastName": "Q"},
-    { "key": 17, "userName": "A1224ZZ", "firstName": "sonn","lastName": "X"},
-    { "key": 18, "userName": "A974ZZ", "firstName":  "weet","lastName": "W"}
-   ]
+  ]
 }
-

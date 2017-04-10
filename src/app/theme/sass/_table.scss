@@ -11,6 +11,7 @@
         }
         &:last-child {
           padding-right: 16px;
+
         }
       }
     }
@@ -29,6 +30,7 @@
         }
         &:last-child {
           padding-right: 16px !important;
+          text-align: center;
         }
       }
     }
@@ -366,6 +368,7 @@ label {
     background-color: dimgrey !important;
     box-shadow: none;
     margin: 8px;
+    text-align: center;
     font-size: 10px;
 }
 
@@ -399,13 +402,14 @@ table.ng2-smart-table td{
     border: 1px solid #e9ebec;
 }
 
-.ng2-smart-filter input {
-    width: 100%;
-    line-height: 20px !important;
-    font-weight: normal;
-    font-size: 12px;
-   
-}
+ 
 .ng2-smart-title{
   font-size: 12px;
+}
+
+.ng2-smart-pagination{
+    display: inline-block;
+    font-size: .875rem;
+    padding: 0;
+    float: right;
 }
