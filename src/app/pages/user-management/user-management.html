@@ -10,6 +10,9 @@
                <h3 class="pull-right"  style="font-size: 15px;" >Showing {{ source.count()}} of {{filteredcount}} entries
                </h3>
             </div>
+            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" data-backdrop="static" 
+            data-keyboard="false" style="float: right;"><i class="fa fa-plus-circle"></i> Create New User Group</button>  
+            
             <div class="col-md-12" style="object-position: fixed;">
                <ng2-smart-table [settings]="settings" [source]="source" 
                (deleteConfirm)="onDeleteConfirm($event)"> </ng2-smart-table>
@@ -18,7 +21,7 @@
       </div>
    </div>
 </div>
-<a href="javascript:void(0)" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="false" style="float: right;">Create New User Group</a><br/>
+ 
 <!-- Modal window for new user group -->
 <div id="myModal" class="modal fade" role="dialog">
    <div class="modal-dialog">
@@ -35,19 +38,20 @@
                      <div class="form-group" class="form-inline">
                         <label for="name">Name </label> 
                         <input type="text" class="form-control" name="name" id="name" [(ngModel)]="newUserGroup.userGroupName"  #name="ngModel"  
-                        minlength="3" maxlength="15" pattern="[A-Za-z0-9]*" required>
+                        minlength="3" maxlength="15" pattern="[A-Za-z0-9]*"  autocomplete="off" required>
                         <div  *ngIf="name.errors && (name.dirty || name.touched)">
                            <div [hidden]="!name.errors.required">
-                              Please enter the name
+                           
+                              Please enter the name 
                            </div>
                            <div [hidden]="!name.errors.minlength">
-                              Name must be at least 3 characters long.
+                             Name must be at least 3 characters long. 
                            </div>
                            <div [hidden]="!name.errors.maxlength">
-                              Name cannot be more than 15 characters long.
+                               Name cannot be more than 15 characters long. 
                            </div>
                            <div [hidden]="!name.errors.pattern">
-                              Name should be alphanumerics.
+                              Name should be alphanumerics. 
                            </div>
                         </div>
                      </div>
@@ -58,11 +62,11 @@
                         </div><br/> -->
                      <ng-container *ngIf="!name.errors">
                         <span defaultOverlayTarget></span>
-                        <button (click)="onClick()">Add Members</button><br/><br/>
-                        <a href="javascript:void(0)">Add Role</a>
+                        <button (click)="onClick()">Add Users</button><br/><br/>
+                        <a href="javascript:void(0)">Assign Roles</a>
                      </ng-container>
                      <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal" >Cancel</button>&nbsp;
+                        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="onCancel()">Cancel</button>&nbsp;&nbsp;&nbsp;
                         <button type="submit" class="btn btn-primary" (click)= "addUserGroup()" [disabled]="!grpForm.form.valid">Create</button>
                      </div>
                   </form>

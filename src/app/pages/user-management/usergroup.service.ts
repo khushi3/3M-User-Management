@@ -30,28 +30,35 @@ public getStations(): Observable<any> {
 
 
 public addUserGroup(userGroupName, roles, users): Observable<any> {
-		var currDate = new Date().toJSON();
+	var currDate = new Date().toJSON();
 
-		var userGroup = {
-			"userGroupName" : userGroupName,
-			"roles" : roles,
-			"users" : users,
-			"dateCreated" : currDate
-		}
-
+	var userGroup = {
+		"userGroupName" : userGroupName,
+		"roles" : roles,
+		"users" : users,
+		"dateCreated" : currDate
+	}
 		return this.http.post(globalConfig.server_url + globalConfig.usergroup_api_url ,JSON.stringify(userGroup), { headers: this.headers })
 						.map(response=> response.json());
 		}
-		public saveUsers(users): Observable<any> {
-		console.log("inside service")
-		//var currDate = new Date().toJSON();
 
+
+public saveUsers(users): Observable<any> {
+	console.log("inside service")
 		var userGroup = {
-			"users" : users
+		"users" : users
 		}
+return this.http.post(globalConfig.server_url + globalConfig.usergroup_api_url ,JSON.stringify(userGroup), { headers: this.headers })
+.map(response=> response.json());
+}
 
-		return this.http.post('http://localhost:7000/usergrp' ,JSON.stringify(userGroup), { headers: this.headers })
-						.map(response=> response.json());
-		}
+public deleteUserGroup(id){
+	console.log(id)
 
-	}
+	let headers = new Headers({ 'Content-Type': 'application/json' });
+	return this.http.delete('http://localhost:7000/usergrp/'+id, headers);        
+
+}
+
+}
+
