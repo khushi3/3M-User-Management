@@ -1,7 +1,11 @@
 import { Injectable,Inject } from '@angular/core';
 import { HttpModule, Http,Headers,Response } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
+import * as globalConfig from './../../global.config';
 
+/**
+	Service class to call REST apis to do operations pertaining to userGroups
+*/
 @Injectable()
 export class UserGroupService {
 
@@ -15,7 +19,7 @@ constructor(@Inject(Http) private http: Http) {
 }
 
 public getUserGroups(): Observable<any>  {
-	return this.http.get('http://localhost:7000/usergrp')
+	return this.http.get(globalConfig.server_url + globalConfig.usergroup_api_url)
 		.map(response => response.json());
 }
 
@@ -26,7 +30,6 @@ public getStations(): Observable<any> {
 
 
 public addUserGroup(userGroupName, roles, users): Observable<any> {
-		console.log("inside service")
 		var currDate = new Date().toJSON();
 
 		var userGroup = {
@@ -36,7 +39,7 @@ public addUserGroup(userGroupName, roles, users): Observable<any> {
 			"dateCreated" : currDate
 		}
 
-		return this.http.post('http://localhost:7000/usergrp' ,JSON.stringify(userGroup), { headers: this.headers })
+		return this.http.post(globalConfig.server_url + globalConfig.usergroup_api_url ,JSON.stringify(userGroup), { headers: this.headers })
 						.map(response=> response.json());
 		}
 

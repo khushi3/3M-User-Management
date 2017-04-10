@@ -15,9 +15,8 @@ import { CustomModal } from './custom-modal';
 import { ModalService } from './modal.service';
 import { ModalComponent } from './_directives/index';
 
-//import { Ng2TableModule } from 'ng2-table';
- import { PaginationModule } from 'ng2-bootstrap';
- import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { PaginationModule } from 'ng2-bootstrap';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 
 @NgModule({

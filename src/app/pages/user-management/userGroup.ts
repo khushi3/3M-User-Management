@@ -1,4 +1,5 @@
 export class UserGroup {
+	id: number;
     userGroupName: string;
    	roles: Array<string>=[];
    	roleNames: string;

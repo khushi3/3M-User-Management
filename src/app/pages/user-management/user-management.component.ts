@@ -14,6 +14,7 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { LocalDataSource } from 'ng2-smart-table';
 import {PagerComponent} from 'ng2-smart-table/pager';
 import {UserGroup} from './userGroup';
+import * as globalConfig from './../../global.config';
 
 @Component({
   selector: 'user-management',
@@ -26,24 +27,15 @@ import {UserGroup} from './userGroup';
 })
 
 export class UserManagement {
- usergroup: UserGroup;
-
- public items = [];
-  
- public role: string;
-   
-  query: string = '';
-  public filteredcount;
-
 
   settings = {
 
     hideHeader: false,
     doEmit: true,
     silent: true,
-  
+
     pager: {
-      perPage: 5,
+      perPage: 10,
     },
     add: {
       addButtonContent: '<i class="ion-ios-plus-outline"></i>',
@@ -58,143 +50,109 @@ export class UserManagement {
 
     columns: {
       userGroupName: {
-        title: 'GROUP NAME',
-        type: 'string'
+        title: globalConfig.label_group_name,
+        type: 'string',
+        sort: false
       },
       roleNames: {
-        title: 'ROLES',
-        type: 'string'
+        title: globalConfig.label_roles,
+        type: 'string',
+        sort: false
       },
       usersCount: {
-        title: 'NO. OF USERS',
-        type: 'number'
+        title: globalConfig.label_users_coount,
+        type: 'number',
+        sort: false
       },
       dateCreated: {
-        title: 'DATE CREATED',
-        type: 'string'
+        title: globalConfig.label_date_created,
+        type: 'string',
+        sort: false
       },
       lastActive : {
-        title: 'LAST ACTIVE',
+        title: globalConfig.label_last_active,
         type: 'string',
-        filter: false
+        filter: false,
+        sort:false
       }
-      
-      },
-  actions: {
-      columnTitle: 'ACTIONS',
+    },
+    actions: {
+      columnTitle: globalConfig.label_actions,
       type: 'html',
       add: false,
       edit: false,
-
+      position: 'right'
     }
 
-    };
+  };
 
+  source: LocalDataSource;
 
-    source: LocalDataSource;
-    public grpitems: Array<any> = [];
-    public datas: Array<any>= [];
+  public filteredcount;
 
-    public lastActions : Array<string> = [ 
-    'Created Region',
-    'Edited Region',
-    'Created Concept',
-    'Edited Concept',
-    'Created Branch',
-    'Released Branch'
-    ];
+  public newUserGroup: UserGroup = new UserGroup(); 
  
+  public userGroups: Array<any>= [];
 
-  public date1 : string;
+  public lastActions : Array<string> = [ 
+  'Created Region',
+  'Edited Region',
+  'Created Concept',
+  'Edited Concept',
+  'Created Branch',
+  'Released Branch'
+  ];
+
 
   constructor(private userGroupService : UserGroupService,public modal: Modal,private ref: ChangeDetectorRef,
-                private _sanitizer: DomSanitizer) {
+    private _sanitizer: DomSanitizer) {
 
-      this.date1 = (new Date()).toJSON();
-        //console.log(this.date1)
-      this.source = new LocalDataSource();
-      this.userGroupService.getUserGroups().subscribe(data => {
-      this.grpitems = data;
+    this.source = new LocalDataSource();
+    // calling service to get userGroups
+    this.userGroupService.getUserGroups().subscribe(data => {
 
+      let groups: Array<any>= data;
       let userGrp: UserGroup;
 
-      // iterate over all userGroups returned from server
-    for (var i = 0; i<this.grpitems.length; i++) {
-        this.role = '';
+      // iterate over all userGroups returned from server and create UserGroup objects
+      for (var i = 0; i<groups.length; i++) {
+
         userGrp = new UserGroup();
 
-        for(var j = 0; j<this.grpitems[i].roles.length; j++){
-              this.role += this.grpitems[i].roles[j].roleName+ ' ,';
-        }
+        userGrp.userGroupName = groups[i].userGroupName;
+        userGrp.roleNames = this.getRoleNamesAsCSV(groups[i].roles);
+        userGrp.usersCount = groups[i].users.length;
+        userGrp.dateCreated = groups[i].dateCreated.substring(0,19);
+        userGrp.lastActive = this.getLastActive(groups[i]);
+        userGrp.id = groups[i].id;
+        //console.log(userGrp);
 
-      if (this.role.endsWith(",")) {
-        this.role = this.role.substring(0, this.role.length - 1);
-      } 
+        this.userGroups.push(userGrp);
+      }
+      // sort the userGroups to get recent one first
+       this.userGroups.sort((a, b) => b.id - a.id);
 
-      userGrp.userGroupName = this.grpitems[i].userGroupName;
-      userGrp.roleNames = this.role;
-      userGrp.usersCount = this.grpitems[i].users.length;
-      userGrp.dateCreated = this.grpitems[i].dateCreated;
-      userGrp.lastActive = this.getLastActive(this.grpitems[i]);
-      console.log(userGrp);
-    /*let usergrp=
-    {
-      userGroupName : this.grpitems[i].userGroupName,
-      roles : this.role,
-      usersCount : this.grpitems[i].users.length,
-      dateCreated : this.grpitems[i].dateCreated,
-      lastActive : this.getLastActive(this.grpitems[i])
-    }*/
-    this.datas.push(userGrp);
-  }
-    this.grpitems=this.datas;
-    console.log(this.grpitems)
-}, error => console.log('Could not load List of Service'));
+    }, error => console.log('Could not load List of Service'));
 
     this.getData().then((data) => {
-    this.source.load(data); 
-    this.filteredcount = this.source.count();
-});
+      this.source.load(data); 
+      this.filteredcount = this.source.count();
+    });
 
-}
-
-getData(): Promise<any> {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(this.grpitems);
-    }, 2000);
-  });
-}
-
-
-
-onDeleteConfirm(event): void {
-  if (window.confirm('Are you sure you want to delete?')) {
-    event.confirm.resolve();
-  } else {
-    event.confirm.reject();
-  }
-}
-
-getLastActive(usergrp) : string {
-
-  console.log(usergrp.users);
-  var lastActive
-  // get random user + random actions , only if group contains users
-  if((usergrp.users != undefined || null) && (usergrp.users.length != 0)){
-    console.log('inside ');
-    lastActive = usergrp.users[Math.floor((Math.random() * usergrp.users.length))].userName + ' : ' +
-    this.lastActions[Math.floor((Math.random() * this.lastActions.length))];
   }
 
-  return lastActive;
-}
-    
-public  addUserGroup() {  
-    if (this.usergroup.userGroupName) {
-      //this.userGroupName = userGrpName;
-      console.log( "func "+this.usergroup.userGroupName);
-      this.userGroupService.addUserGroup(this.usergroup.userGroupName,this.usergroup.users,this.usergroup.roles)
+  getData(): Promise<any> {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(this.userGroups);
+      }, 2000);
+    });
+  }
+
+  public addUserGroup() {  
+    if (this.newUserGroup.userGroupName) {
+      this.userGroupService.addUserGroup(this.newUserGroup.userGroupName,
+        this.newUserGroup.users,this.newUserGroup.roles)
       .subscribe((r:Response)=>{
         console.log(r);
       });
@@ -209,5 +167,41 @@ public  addUserGroup() {
     this.modal.open(CustomModal, overlayConfigFactory({ num1: 2, num2: 3 }, BSModalContext));
   }
 
+  onDeleteConfirm(event): void {
+    if (window.confirm('Are you sure you want to delete?')) {
+       
+      event.confirm.resolve();
+    } else {
+      event.confirm.reject();
+    }
+  }
+
+  
+  // iterate over all roles of a group and return Comma Separated roles
+  private getRoleNamesAsCSV(groupRoles){
+    var roleNames : string = '';
+    for(var j = 0; j<groupRoles.length; j++){
+      roleNames += groupRoles[j].roleName + ', ';
+    }
+
+    if (roleNames.endsWith(', ')) {
+      roleNames = roleNames.substring(0, roleNames.length - 2);
+    } 
+    return roleNames;
+  }
+
+  // method to get last operation done by any user in a group
+  // this is a place holder, as of now, hence returning static data
+  private getLastActive(usergrp) : string {
+
+    var lastActive;
+    // get random user + random actions , only if group contains users
+    if((usergrp.users != undefined || null) && (usergrp.users.length != 0)){
+      console.log('inside ');
+      lastActive = usergrp.users[Math.floor((Math.random() * usergrp.users.length))].userName + ' : ' +
+      this.lastActions[Math.floor((Math.random() * this.lastActions.length))];
+    }
+    return lastActive;
+  }
 
 }
