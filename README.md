@@ -1,13 +1,4 @@
-
-
-# Admin panel framework based on Angular 2, Bootstrap 4 and Webpack
-
-
-### Demo
-
-## Based on
-Angular 2, Bootstrap 4, Webpack and lots of awesome modules and plugins
-
+# User Management Application based on Angular 2, Bootstrap 4 and Webpack
 
 ## Features
 * TypeScript
@@ -18,9 +9,6 @@ Angular 2, Bootstrap 4, Webpack and lots of awesome modules and plugins
 * Sass
 * Angular 2
 * jQuery
-* Charts (Chartist, Chart.js)
-* Maps (Google, Leaflet, amMap)
-* and many more!
 
 ##License
 [MIT](LICENSE.txt) license.
