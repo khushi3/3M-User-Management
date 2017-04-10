@@ -207,36 +207,6 @@
       "dateCreated": "2017-04-04T14:28:48.479Z"
     },
     {
-      "userGroupName": "test",
-      "id": 19,
-      "roles": [
-        {
-          "active": false,
-          "roleId": 3,
-          "roleName": "Super Admin",
-          "roleDesc": "Super Admin",
-          "permissions": null
-        }
-      ],
-      "users": [
-        {
-          "active": false,
-          "userId": 3,
-          "userName": "A1235ZZ",
-          "firstName": "Ramu",
-          "lastName": "V"
-        },
-        {
-          "active": false,
-          "userId": 4,
-          "userName": "A1236ZZ",
-          "firstName": "Kavi",
-          "lastName": "Priya"
-        }
-      ],
-      "dateCreated": "2017-04-04T14:28:48.479Z"
-    },
-    {
       "userGroupName": "TestGroup",
       "id": 20,
       "roles": [
@@ -415,94 +385,54 @@
       "dateCreated": "2017-04-07T14:28:48.479Z"
     },
     {
-      "userGroupName": "khushi",
+      "userGroupName": "testq",
       "roles": [],
-      "users": [],
-      "dateCreated": "2017-04-08T14:04:21.479Z",
+      "users": [
+        {
+          "active": false,
+          "userId": 9,
+          "userName": "A12148ZZ",
+          "firstName": "June",
+          "lastName": "T"
+        }
+      ],
+      "dateCreated": "2017-04-10T11:36:42.973Z",
       "id": 29
     },
     {
+      "userGroupName": "test2",
+      "roles": [],
       "users": [
         {
-          "active": false,
-          "userId": 3,
-          "userName": "A1235ZZ",
-          "firstName": "Khushboo",
-          "lastName": "Bh"
+          "key": 32,
+          "station": "Eureka",
+          "state": "CO"
         }
       ],
+      "dateCreated": "2017-04-10T11:39:34.171Z",
       "id": 30
     },
     {
-      "userGroupName": "khushi",
+      "userGroupName": "Test4",
       "roles": [],
-      "users": [],
-      "dateCreated": "2017-04-10T08:02:17.869Z",
-      "id": 31
-    },
-    {
       "users": [
         {
           "active": false,
-          "userId": 13,
-          "userName": "A3438ZZ",
-          "firstName": "Pinto",
+          "userId": 7,
+          "userName": "A1338ZZ",
+          "firstName": "Donald",
+          "lastName": "S"
+        },
+        {
+          "active": false,
+          "userId": 8,
+          "userName": "A1228ZZ",
+          "firstName": "Dpor",
           "lastName": "S"
         }
       ],
+      "dateCreated": "2017-04-10T11:46:25.423Z",
       "id": 32
-    },
-    {
-      "userGroupName": "tina",
-      "roles": [],
-      "users": [],
-      "dateCreated": "2017-04-10T08:16:37.478Z",
-      "id": 33
-    },
-    {
-      "userGroupName": "kesav",
-      "roles": [],
-      "users": [
-        {
-          "active": false,
-          "userId": 3,
-          "userName": "A1235ZZ",
-          "firstName": "Khushboo",
-          "lastName": "Bh"
-        }
-      ],
-      "dateCreated": "2017-04-10T09:41:34.073Z",
-      "id": 34
-    },
-    {
-      "userGroupName": "pallaviq",
-      "roles": [],
-      "users": [
-        {
-          "active": false,
-          "userId": 13,
-          "userName": "A3438ZZ",
-          "firstName": "Pinto",
-          "lastName": "S"
-        }
-      ],
-      "dateCreated": "2017-04-10T10:07:57.542Z",
-      "id": 35
-    },
-    {
-      "userGroupName": "dgt",
-      "roles": [],
-      "users": [
-        {
-          "active": false,
-          "userId": 2,
-          "userName": "A1234ZZ",
-          "firstName": "Parthiban",
-          "lastName": "M"
-        }
-      ],
-      "dateCreated": "2017-04-10T10:49:04.209Z",
-      "id": 36
     }
   ],
   "users": [
@@ -551,64 +481,50 @@
     {
       "active": false,
       "userId": 7,
-      "userName": "A1237ZZ",
+      "userName": "A1338ZZ",
       "firstName": "Donald",
       "lastName": "S"
     },
     {
       "active": false,
       "userId": 8,
-      "userName": "A1438ZZ",
-      "firstName": "Micky",
+      "userName": "A1228ZZ",
+      "firstName": "Dpor",
       "lastName": "S"
     },
     {
       "active": false,
       "userId": 9,
-      "userName": "A1338ZZ",
+      "userName": "A12148ZZ",
       "firstName": "June",
-      "lastName": "S"
+      "lastName": "T"
     },
     {
       "active": false,
       "userId": 10,
-      "userName": "A1238ZZ",
-      "firstName": "Seemfw",
+      "userName": "A1237ZZ",
+      "firstName": "Qwert",
       "lastName": "S"
     },
     {
       "active": false,
       "userId": 11,
-      "userName": "A1938ZZ",
-      "firstName": "Wicky",
+      "userName": "A0232ZZ",
+      "firstName": "Xertq",
       "lastName": "S"
     },
     {
       "active": false,
       "userId": 12,
-      "userName": "A1208ZZ",
-      "firstName": "Vibly",
+      "userName": "A1038ZZ",
+      "firstName": "Zqwe",
       "lastName": "S"
     },
     {
       "active": false,
       "userId": 13,
-      "userName": "A3438ZZ",
-      "firstName": "Pinto",
-      "lastName": "S"
-    },
-    {
-      "active": false,
-      "userId": 14,
-      "userName": "A12304Z",
-      "firstName": "Cinep",
-      "lastName": "S"
-    },
-    {
-      "active": false,
-      "userId": 15,
-      "userName": "A1248ZZ",
-      "firstName": "Quep",
+      "userName": "A1233ZZ",
+      "firstName": "pool",
       "lastName": "S"
     }
   ],

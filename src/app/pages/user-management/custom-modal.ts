@@ -45,13 +45,12 @@ public  saveUsers() {
     if (this.confirmed && this.confirmed.length) {
       //this.userGroupName = userGrpName;
      // console.log( "func "+this.usergroup.users);
-      this.userGroupService.saveUsers(this.confirmed)
-      .subscribe((r:Response)=>{
-        console.log(r);
-      });
+      //this.userGroupService.saveUsers(this.confirmed)
+      //.subscribe((r:Response)=>{
+       // console.log(r);
+      //});
       console.log("users saved successfully!!");
-       this.dialog.close();
-      //window.location.reload();
+      this.dialog.close(this.confirmed);
     }
   }
   closeModal() {

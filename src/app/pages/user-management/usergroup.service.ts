@@ -29,8 +29,14 @@ public getStations(): Observable<any> {
 }
 
 
-public addUserGroup(userGroupName, roles, users): Observable<any> {
-	var currDate = new Date().toJSON();
+public addUserGroup(userGroupName, users, roles): Observable<any> {
+		var currDate = new Date().toJSON();
+		var userGroup = {
+			"userGroupName" : userGroupName,
+			"users" : users,
+			"roles" : roles,
+			"dateCreated" : currDate
+		}
 
 	var userGroup = {
 		"userGroupName" : userGroupName,
@@ -61,4 +67,5 @@ public deleteUserGroup(id){
 }
 
 }
+
 
