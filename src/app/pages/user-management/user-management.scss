@@ -67,6 +67,23 @@ width: 105%;
     color: #ffffff !important;
     margin-left: 15px !important;
     background-color: dimgrey;
+    margin-bottom: 15px; 
+}
+
+
+button.btn.btn-info {
+    border-width: 1px;
+    
+    border-color: dimgrey;
+    margin-bottom: 15px; 
+    background-color: dimgrey;
+    color: #ffffff !important;
+    margin-right: 20px;
+}
+button.btn.btn-primary {
+    background: #00abff;
+    border-color: #0cb7ff;
+    margin-bottom: 15px;
 }
 input.form-control {
     color: #000 !important;
@@ -103,11 +120,9 @@ label {
     margin-bottom: .5rem;
     font-size: 15px !important;
     margin-top: 10px;
+    font-weight: bold;
 }
-.row {
-    margin-left: 5px !important;
-    margin-right: -15px;
-}
+ 
 a {
     text-decoration: underline !important;
 }
