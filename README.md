@@ -1,4 +1,4 @@
-# User Management Application based on Angular 2, Bootstrap 4 and Webpack
+# Application based on Angular 2, Bootstrap 4 and Webpack
 
 ## Features
 * TypeScript
